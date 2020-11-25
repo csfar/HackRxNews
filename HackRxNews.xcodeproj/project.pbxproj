@@ -1,0 +1,766 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		662CA8CD0CEF906A790F33BE /* Pods_HackRxNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC59DB4E474EC81E15C870D /* Pods_HackRxNews.framework */; };
+		9B79E95D064234170D82D9DB /* Pods_HackRxNews_HackRxNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25E457D3B4122DE692B3769 /* Pods_HackRxNews_HackRxNewsUITests.framework */; };
+		A40F7980256EA26400B1011A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F797F256EA26400B1011A /* AppDelegate.swift */; };
+		A40F7982256EA26400B1011A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7981256EA26400B1011A /* SceneDelegate.swift */; };
+		A40F7984256EA26400B1011A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7983256EA26400B1011A /* ViewController.swift */; };
+		A40F7987256EA26400B1011A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F7985256EA26400B1011A /* Main.storyboard */; };
+		A40F7989256EA26600B1011A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40F7988256EA26600B1011A /* Assets.xcassets */; };
+		A40F798C256EA26600B1011A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F798A256EA26600B1011A /* LaunchScreen.storyboard */; };
+		A40F7997256EA26700B1011A /* HackRxNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7996256EA26700B1011A /* HackRxNewsTests.swift */; };
+		A40F79A2256EA26700B1011A /* HackRxNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F79A1256EA26700B1011A /* HackRxNewsUITests.swift */; };
+		C7A862111A1008EBF61174EF /* Pods_HackRxNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BDF08DB05782A855590428 /* Pods_HackRxNewsTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A40F7993256EA26700B1011A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A40F7974256EA26400B1011A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A40F797B256EA26400B1011A;
+			remoteInfo = HackRxNews;
+		};
+		A40F799E256EA26700B1011A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A40F7974256EA26400B1011A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A40F797B256EA26400B1011A;
+			remoteInfo = HackRxNews;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07BDF08DB05782A855590428 /* Pods_HackRxNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackRxNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EC59DB4E474EC81E15C870D /* Pods_HackRxNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackRxNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F3A0A2B2C51DB4CFD521DFF /* Pods-HackRxNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNewsTests.release.xcconfig"; path = "Target Support Files/Pods-HackRxNewsTests/Pods-HackRxNewsTests.release.xcconfig"; sourceTree = "<group>"; };
+		43D916111F2C4642333C88E7 /* Pods-HackRxNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNews.release.xcconfig"; path = "Target Support Files/Pods-HackRxNews/Pods-HackRxNews.release.xcconfig"; sourceTree = "<group>"; };
+		58CC3A30B39E029F447961F2 /* Pods-HackRxNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-HackRxNewsTests/Pods-HackRxNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		62CD4ED7E98985E8DCC7F049 /* Pods-HackRxNews-HackRxNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNews-HackRxNewsUITests.debug.xcconfig"; path = "Target Support Files/Pods-HackRxNews-HackRxNewsUITests/Pods-HackRxNews-HackRxNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		890A2A6872EB5FFEFC48BA66 /* Pods-HackRxNews-HackRxNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNews-HackRxNewsUITests.release.xcconfig"; path = "Target Support Files/Pods-HackRxNews-HackRxNewsUITests/Pods-HackRxNews-HackRxNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A40F797C256EA26400B1011A /* HackRxNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackRxNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40F797F256EA26400B1011A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A40F7981256EA26400B1011A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A40F7983256EA26400B1011A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A40F7986256EA26400B1011A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A40F7988256EA26600B1011A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A40F798B256EA26600B1011A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A40F798D256EA26600B1011A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A40F7992256EA26700B1011A /* HackRxNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackRxNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40F7996256EA26700B1011A /* HackRxNewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxNewsTests.swift; sourceTree = "<group>"; };
+		A40F7998256EA26700B1011A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A40F799D256EA26700B1011A /* HackRxNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackRxNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40F79A1256EA26700B1011A /* HackRxNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxNewsUITests.swift; sourceTree = "<group>"; };
+		A40F79A3256EA26700B1011A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9D653C96011AE329D1F51BD /* Pods-HackRxNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNews.debug.xcconfig"; path = "Target Support Files/Pods-HackRxNews/Pods-HackRxNews.debug.xcconfig"; sourceTree = "<group>"; };
+		E25E457D3B4122DE692B3769 /* Pods_HackRxNews_HackRxNewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HackRxNews_HackRxNewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40F7979256EA26400B1011A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				662CA8CD0CEF906A790F33BE /* Pods_HackRxNews.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40F798F256EA26700B1011A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7A862111A1008EBF61174EF /* Pods_HackRxNewsTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40F799A256EA26700B1011A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B79E95D064234170D82D9DB /* Pods_HackRxNews_HackRxNewsUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		70A6CEFB5F083A5AEC3272DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EC59DB4E474EC81E15C870D /* Pods_HackRxNews.framework */,
+				E25E457D3B4122DE692B3769 /* Pods_HackRxNews_HackRxNewsUITests.framework */,
+				07BDF08DB05782A855590428 /* Pods_HackRxNewsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A40F7973256EA26400B1011A = {
+			isa = PBXGroup;
+			children = (
+				A40F797E256EA26400B1011A /* HackRxNews */,
+				A40F7995256EA26700B1011A /* HackRxNewsTests */,
+				A40F79A0256EA26700B1011A /* HackRxNewsUITests */,
+				A40F797D256EA26400B1011A /* Products */,
+				EBE95711D4816A0752C82F7B /* Pods */,
+				70A6CEFB5F083A5AEC3272DD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A40F797D256EA26400B1011A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A40F797C256EA26400B1011A /* HackRxNews.app */,
+				A40F7992256EA26700B1011A /* HackRxNewsTests.xctest */,
+				A40F799D256EA26700B1011A /* HackRxNewsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40F797E256EA26400B1011A /* HackRxNews */ = {
+			isa = PBXGroup;
+			children = (
+				A40F797F256EA26400B1011A /* AppDelegate.swift */,
+				A40F7981256EA26400B1011A /* SceneDelegate.swift */,
+				A40F7983256EA26400B1011A /* ViewController.swift */,
+				A40F7985256EA26400B1011A /* Main.storyboard */,
+				A40F7988256EA26600B1011A /* Assets.xcassets */,
+				A40F798A256EA26600B1011A /* LaunchScreen.storyboard */,
+				A40F798D256EA26600B1011A /* Info.plist */,
+			);
+			path = HackRxNews;
+			sourceTree = "<group>";
+		};
+		A40F7995256EA26700B1011A /* HackRxNewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				A40F7996256EA26700B1011A /* HackRxNewsTests.swift */,
+				A40F7998256EA26700B1011A /* Info.plist */,
+			);
+			path = HackRxNewsTests;
+			sourceTree = "<group>";
+		};
+		A40F79A0256EA26700B1011A /* HackRxNewsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A40F79A1256EA26700B1011A /* HackRxNewsUITests.swift */,
+				A40F79A3256EA26700B1011A /* Info.plist */,
+			);
+			path = HackRxNewsUITests;
+			sourceTree = "<group>";
+		};
+		EBE95711D4816A0752C82F7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A9D653C96011AE329D1F51BD /* Pods-HackRxNews.debug.xcconfig */,
+				43D916111F2C4642333C88E7 /* Pods-HackRxNews.release.xcconfig */,
+				62CD4ED7E98985E8DCC7F049 /* Pods-HackRxNews-HackRxNewsUITests.debug.xcconfig */,
+				890A2A6872EB5FFEFC48BA66 /* Pods-HackRxNews-HackRxNewsUITests.release.xcconfig */,
+				58CC3A30B39E029F447961F2 /* Pods-HackRxNewsTests.debug.xcconfig */,
+				2F3A0A2B2C51DB4CFD521DFF /* Pods-HackRxNewsTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A40F797B256EA26400B1011A /* HackRxNews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A40F79A6256EA26700B1011A /* Build configuration list for PBXNativeTarget "HackRxNews" */;
+			buildPhases = (
+				6BFD95D8E5FB6E78BC678326 /* [CP] Check Pods Manifest.lock */,
+				A40F7978256EA26400B1011A /* Sources */,
+				A40F7979256EA26400B1011A /* Frameworks */,
+				A40F797A256EA26400B1011A /* Resources */,
+				AE9572948263DD16E57EF7E2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HackRxNews;
+			productName = HackRxNews;
+			productReference = A40F797C256EA26400B1011A /* HackRxNews.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A40F7991256EA26700B1011A /* HackRxNewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A40F79A9256EA26700B1011A /* Build configuration list for PBXNativeTarget "HackRxNewsTests" */;
+			buildPhases = (
+				A094F1557A5DA93455FE3523 /* [CP] Check Pods Manifest.lock */,
+				A40F798E256EA26700B1011A /* Sources */,
+				A40F798F256EA26700B1011A /* Frameworks */,
+				A40F7990256EA26700B1011A /* Resources */,
+				EDFE282E380AC4F9EE81D432 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A40F7994256EA26700B1011A /* PBXTargetDependency */,
+			);
+			name = HackRxNewsTests;
+			productName = HackRxNewsTests;
+			productReference = A40F7992256EA26700B1011A /* HackRxNewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A40F799C256EA26700B1011A /* HackRxNewsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A40F79AC256EA26700B1011A /* Build configuration list for PBXNativeTarget "HackRxNewsUITests" */;
+			buildPhases = (
+				A0042D041FA8859513FF0BA2 /* [CP] Check Pods Manifest.lock */,
+				A40F7999256EA26700B1011A /* Sources */,
+				A40F799A256EA26700B1011A /* Frameworks */,
+				A40F799B256EA26700B1011A /* Resources */,
+				9BDF7754CAF434E0EB876534 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A40F799F256EA26700B1011A /* PBXTargetDependency */,
+			);
+			name = HackRxNewsUITests;
+			productName = HackRxNewsUITests;
+			productReference = A40F799D256EA26700B1011A /* HackRxNewsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A40F7974256EA26400B1011A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					A40F797B256EA26400B1011A = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					A40F7991256EA26700B1011A = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = A40F797B256EA26400B1011A;
+					};
+					A40F799C256EA26700B1011A = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = A40F797B256EA26400B1011A;
+					};
+				};
+			};
+			buildConfigurationList = A40F7977256EA26400B1011A /* Build configuration list for PBXProject "HackRxNews" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40F7973256EA26400B1011A;
+			productRefGroup = A40F797D256EA26400B1011A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A40F797B256EA26400B1011A /* HackRxNews */,
+				A40F7991256EA26700B1011A /* HackRxNewsTests */,
+				A40F799C256EA26700B1011A /* HackRxNewsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A40F797A256EA26400B1011A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40F798C256EA26600B1011A /* LaunchScreen.storyboard in Resources */,
+				A40F7989256EA26600B1011A /* Assets.xcassets in Resources */,
+				A40F7987256EA26400B1011A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40F7990256EA26700B1011A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40F799B256EA26700B1011A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6BFD95D8E5FB6E78BC678326 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackRxNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BDF7754CAF434E0EB876534 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackRxNews-HackRxNewsUITests/Pods-HackRxNews-HackRxNewsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackRxNews-HackRxNewsUITests/Pods-HackRxNews-HackRxNewsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackRxNews-HackRxNewsUITests/Pods-HackRxNews-HackRxNewsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0042D041FA8859513FF0BA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackRxNews-HackRxNewsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A094F1557A5DA93455FE3523 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HackRxNewsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE9572948263DD16E57EF7E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackRxNews/Pods-HackRxNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackRxNews/Pods-HackRxNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackRxNews/Pods-HackRxNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDFE282E380AC4F9EE81D432 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackRxNewsTests/Pods-HackRxNewsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HackRxNewsTests/Pods-HackRxNewsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackRxNewsTests/Pods-HackRxNewsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A40F7978256EA26400B1011A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40F7984256EA26400B1011A /* ViewController.swift in Sources */,
+				A40F7980256EA26400B1011A /* AppDelegate.swift in Sources */,
+				A40F7982256EA26400B1011A /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40F798E256EA26700B1011A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40F7997256EA26700B1011A /* HackRxNewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A40F7999256EA26700B1011A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40F79A2256EA26700B1011A /* HackRxNewsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A40F7994256EA26700B1011A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A40F797B256EA26400B1011A /* HackRxNews */;
+			targetProxy = A40F7993256EA26700B1011A /* PBXContainerItemProxy */;
+		};
+		A40F799F256EA26700B1011A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A40F797B256EA26400B1011A /* HackRxNews */;
+			targetProxy = A40F799E256EA26700B1011A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A40F7985256EA26400B1011A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A40F7986256EA26400B1011A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A40F798A256EA26600B1011A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A40F798B256EA26600B1011A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A40F79A4256EA26700B1011A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A40F79A5256EA26700B1011A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A40F79A7256EA26700B1011A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D653C96011AE329D1F51BD /* Pods-HackRxNews.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L76X5KFZD9;
+				INFOPLIST_FILE = HackRxNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A40F79A8256EA26700B1011A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43D916111F2C4642333C88E7 /* Pods-HackRxNews.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L76X5KFZD9;
+				INFOPLIST_FILE = HackRxNews/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNews;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A40F79AA256EA26700B1011A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58CC3A30B39E029F447961F2 /* Pods-HackRxNewsTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L76X5KFZD9;
+				INFOPLIST_FILE = HackRxNewsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackRxNews.app/HackRxNews";
+			};
+			name = Debug;
+		};
+		A40F79AB256EA26700B1011A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F3A0A2B2C51DB4CFD521DFF /* Pods-HackRxNewsTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L76X5KFZD9;
+				INFOPLIST_FILE = HackRxNewsTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNewsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HackRxNews.app/HackRxNews";
+			};
+			name = Release;
+		};
+		A40F79AD256EA26700B1011A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62CD4ED7E98985E8DCC7F049 /* Pods-HackRxNews-HackRxNewsUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L76X5KFZD9;
+				INFOPLIST_FILE = HackRxNewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HackRxNews;
+			};
+			name = Debug;
+		};
+		A40F79AE256EA26700B1011A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 890A2A6872EB5FFEFC48BA66 /* Pods-HackRxNews-HackRxNewsUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L76X5KFZD9;
+				INFOPLIST_FILE = HackRxNewsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNewsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HackRxNews;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A40F7977256EA26400B1011A /* Build configuration list for PBXProject "HackRxNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40F79A4256EA26700B1011A /* Debug */,
+				A40F79A5256EA26700B1011A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A40F79A6256EA26700B1011A /* Build configuration list for PBXNativeTarget "HackRxNews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40F79A7256EA26700B1011A /* Debug */,
+				A40F79A8256EA26700B1011A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A40F79A9256EA26700B1011A /* Build configuration list for PBXNativeTarget "HackRxNewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40F79AA256EA26700B1011A /* Debug */,
+				A40F79AB256EA26700B1011A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A40F79AC256EA26700B1011A /* Build configuration list for PBXNativeTarget "HackRxNewsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40F79AD256EA26700B1011A /* Debug */,
+				A40F79AE256EA26700B1011A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A40F7974256EA26400B1011A /* Project object */;
+}

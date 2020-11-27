@@ -12,7 +12,6 @@
 		A40F7980256EA26400B1011A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F797F256EA26400B1011A /* AppDelegate.swift */; };
 		A40F7982256EA26400B1011A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7981256EA26400B1011A /* SceneDelegate.swift */; };
 		A40F7984256EA26400B1011A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7983256EA26400B1011A /* ViewController.swift */; };
-		A40F7987256EA26400B1011A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F7985256EA26400B1011A /* Main.storyboard */; };
 		A40F7989256EA26600B1011A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40F7988256EA26600B1011A /* Assets.xcassets */; };
 		A40F798C256EA26600B1011A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F798A256EA26600B1011A /* LaunchScreen.storyboard */; };
 		A40F7997256EA26700B1011A /* HackRxNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7996256EA26700B1011A /* HackRxNewsTests.swift */; };
@@ -49,7 +48,6 @@
 		A40F797F256EA26400B1011A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A40F7981256EA26400B1011A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A40F7983256EA26400B1011A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A40F7986256EA26400B1011A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A40F7988256EA26600B1011A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40F798B256EA26600B1011A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40F798D256EA26600B1011A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,13 +124,9 @@
 		A40F797E256EA26400B1011A /* HackRxNews */ = {
 			isa = PBXGroup;
 			children = (
-				A40F797F256EA26400B1011A /* AppDelegate.swift */,
-				A40F7981256EA26400B1011A /* SceneDelegate.swift */,
+				A4923CB1257120E000B1D939 /* Application */,
+				A4923CB2257120EB00B1D939 /* Resources */,
 				A40F7983256EA26400B1011A /* ViewController.swift */,
-				A40F7985256EA26400B1011A /* Main.storyboard */,
-				A40F7988256EA26600B1011A /* Assets.xcassets */,
-				A40F798A256EA26600B1011A /* LaunchScreen.storyboard */,
-				A40F798D256EA26600B1011A /* Info.plist */,
 			);
 			path = HackRxNews;
 			sourceTree = "<group>";
@@ -153,6 +147,25 @@
 				A40F79A3256EA26700B1011A /* Info.plist */,
 			);
 			path = HackRxNewsUITests;
+			sourceTree = "<group>";
+		};
+		A4923CB1257120E000B1D939 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A40F797F256EA26400B1011A /* AppDelegate.swift */,
+				A40F7981256EA26400B1011A /* SceneDelegate.swift */,
+				A40F798D256EA26600B1011A /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A4923CB2257120EB00B1D939 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A40F798A256EA26600B1011A /* LaunchScreen.storyboard */,
+				A40F7988256EA26600B1011A /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		EBE95711D4816A0752C82F7B /* Pods */ = {
@@ -180,6 +193,7 @@
 				A40F7979256EA26400B1011A /* Frameworks */,
 				A40F797A256EA26400B1011A /* Resources */,
 				AE9572948263DD16E57EF7E2 /* [CP] Embed Pods Frameworks */,
+				A4923CB92571217600B1D939 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -279,7 +293,6 @@
 			files = (
 				A40F798C256EA26600B1011A /* LaunchScreen.storyboard in Resources */,
 				A40F7989256EA26600B1011A /* Assets.xcassets in Resources */,
-				A40F7987256EA26400B1011A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +396,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A4923CB92571217600B1D939 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		AE9572948263DD16E57EF7E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,14 +493,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A40F7985256EA26400B1011A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A40F7986256EA26400B1011A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A40F798A256EA26600B1011A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -532,7 +555,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -587,7 +610,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -605,7 +628,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L76X5KFZD9;
-				INFOPLIST_FILE = HackRxNews/Info.plist;
+				INFOPLIST_FILE = HackRxNews/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -613,7 +637,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -625,7 +649,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L76X5KFZD9;
-				INFOPLIST_FILE = HackRxNews/Info.plist;
+				INFOPLIST_FILE = HackRxNews/Application/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,7 +658,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.csfar.HackRxNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

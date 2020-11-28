@@ -1,7 +1,7 @@
  
 
 target 'HackRxNews' do
-    platform :ios, '9.0'
+    platform :ios, '13.0'
     use_frameworks!
 
     pod 'RxSwift', '6.0.0-rc.2'
@@ -14,9 +14,6 @@ target 'HackRxNews' do
     pod 'Nimble-Snapshots'
     pod 'RxBlocking', '6.0.0-rc.2'
     pod 'RxTest', '6.0.0-rc.2'
-  end
-
-  target 'HackRxNewsUITests' do
   end
 
 end

@@ -11,11 +11,11 @@ import XCTest
 final class AutoLayoutTests: XCTestCase {
     @AutoLayout var sut: UIView
 
-    func testTranslatesAutoresizingMaskIntoConstraintsFalse() {
+    func test_TranslatesAutoresizingMaskIntoConstraints_equalFalse() {
         XCTAssertFalse(sut.translatesAutoresizingMaskIntoConstraints)
     }
 
-    func testFrameZero() {
+    func test_Frame_asZero() {
         XCTAssertEqual(sut.frame, CGRect(x: 0, y: 0, width: 0, height: 0))
     }
 }

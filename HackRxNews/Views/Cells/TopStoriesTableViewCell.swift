@@ -11,16 +11,15 @@ import UIKit
 final class TopStoriesTableViewCell: UITableViewCell {
     // MARK: - Properties
     /// The story's title.
-    @AutoLayout private var titleLabel: UIButton
+    @AutoLayout private var titleButton: UIButton
     /// The story's author.
-    @AutoLayout private var authorLabel: UIButton
+    @AutoLayout private var authorButton: UIButton
     /// The story's points.
-    @AutoLayout private var pointsLabel: UILabel
+    @AutoLayout private var pointsLabel: HackRxLabel
     /// The story's date of posting.
-    @AutoLayout private var dateLabel: UILabel
+    @AutoLayout private var dateLabel: HackRxLabel
     /// The story's number of comments.
-    @AutoLayout private var commentsLabel: UIButton
-
+    @AutoLayout private var commentsButton: UIButton
 
     // MARK: - Identifier
     /// The cell's identifier.
@@ -42,10 +41,35 @@ final class TopStoriesTableViewCell: UITableViewCell {
     // MARK: - Views setup
     /// Bundles all views' `setUp` function.
     private func setUpViews() {
+        setUpTitleButton()
+        setUpAuthorButton()
+        setUpPointsLabel()
+        setUpDateLabel()
+        setUpCommentsButton()
+    }
+
+    /// Sets up the title button.
+    private func setUpTitleButton() {
 
     }
 
-    private func setUpTitleLabel() {
+    /// Sets up the author button.
+    private func setUpAuthorButton() {
+
+    }
+
+    /// Sets up the points label.
+    private func setUpPointsLabel() {
+        pointsLabel.style(.points)
+    }
+
+    /// Sets up the date label.
+    private func setUpDateLabel() {
+        pointsLabel.style(.date)
+    }
+
+    /// Sets up the comments button.
+    private func setUpCommentsButton() {
     }
 
     // MARK: - Layout

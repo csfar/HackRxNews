@@ -10,10 +10,10 @@ import UIKit
 /// Representation of a `HackRxNews` label.
 final class HackRxLabel: UILabel {
     // MARK: - Properties
-    /// Determines a `HackRxLabel` style.
+    /// Available styles of a `HackRxLabel`.
     enum Style {
-        /// A story's title style.
-        case title
+        /// A story's points style.
+        case points
         /// A story's date of posting style.
         case date
     }
@@ -31,20 +31,24 @@ final class HackRxLabel: UILabel {
     /// Styles a `HackRxLabel` according to a `HackRxLabel.Style`.
     func style(_ style: HackRxLabel.Style) {
         switch style {
-        case .title:
-            styleTitle()
+        case .points:
+            stylePoints()
         case .date:
             styleDate()
         }
     }
 
-    /// Styles a `HackRxLabel` as `Style.title`.
-    private func styleTitle() {
-
+    // MARK: - Styles
+    /// Styles a `HackRxLabel` as `Style.points`.
+    private func stylePoints() {
+        font = UIFont.preferredFont(forTextStyle: .body).bold()
+        textColor = .black
+        numberOfLines = 0
     }
 
     /// Styles a `HackRxLabel` as `Style.date`.
     private func styleDate() {
-
+        font = UIFont.preferredFont(forTextStyle: .body)
+        textColor = .lightGray
     }
 }

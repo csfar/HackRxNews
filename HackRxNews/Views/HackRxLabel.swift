@@ -16,6 +16,12 @@ final class HackRxLabel: UILabel {
         case points
         /// A story's date of posting style.
         case date
+        /// A story's title style.
+        case title
+        /// A story's author style.
+        case author
+        /// A story's comments style.
+        case comments
     }
 
     // MARK: - Init
@@ -35,6 +41,12 @@ final class HackRxLabel: UILabel {
             stylePoints()
         case .date:
             styleDate()
+        case .title:
+            styleTitle()
+        case .author:
+            styleAuthor()
+        case .comments:
+            styleComments()
         }
     }
 
@@ -48,6 +60,24 @@ final class HackRxLabel: UILabel {
 
     /// Styles a `HackRxLabel` as `Style.date`.
     private func styleDate() {
+        font = UIFont.preferredFont(forTextStyle: .body)
+        textColor = .lightGray
+    }
+
+    /// Styles a `HackRxLabel` as `Style.title`.
+    private func styleTitle() {
+        font = UIFont.preferredFont(forTextStyle: .title3).bold()
+        textColor = .black
+    }
+
+    /// Styles a `HackRxLabel` as `Style.author`.
+    private func styleAuthor() {
+        font = UIFont.preferredFont(forTextStyle: .body)
+        textColor = .black
+    }
+
+    /// Styles a `HackRxLabel` as `Style.comments`.
+    private func styleComments() {
         font = UIFont.preferredFont(forTextStyle: .body)
         textColor = .lightGray
     }

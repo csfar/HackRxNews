@@ -41,6 +41,9 @@ final class TopStoriesViewController: UIViewController {
         storiesTableView.dataSource = self
         storiesTableView.register(TopStoriesTableViewCell.self,
                                   forCellReuseIdentifier: TopStoriesTableViewCell.identifier)
+
+        storiesTableView.rowHeight = UITableView.automaticDimension
+        storiesTableView.estimatedRowHeight = 100
     }
 
     // MARK: - Layout
@@ -77,7 +80,12 @@ extension TopStoriesViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        cell.backgroundColor = .gray
+        let story = TopStoryViewModel(title: "Show HN: HackRxNews",
+                                      author: "janejohnjanejohn janejohn janejohn janejohn janejohn",
+                                      dateOfPosting: "8 hours ago",
+                                      numberOfComments: "81 comments",
+                                      points: "999 points")
+        cell.setUp(with: story)
         return cell
     }
 

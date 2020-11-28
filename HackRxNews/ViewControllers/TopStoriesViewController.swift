@@ -81,10 +81,10 @@ extension TopStoriesViewController: UITableViewDataSource {
         }
 
         let story = TopStoryViewModel(title: "Show HN: HackRxNews",
-                                      author: "janejohnjanejohn janejohn janejohn janejohn janejohn",
+                                      author: "by janejohn",
                                       dateOfPosting: "8 hours ago",
                                       numberOfComments: "81 comments",
-                                      points: "999 points")
+                                      points: "999")
         cell.setUp(with: story)
         return cell
     }

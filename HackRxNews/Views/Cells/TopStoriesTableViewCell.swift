@@ -21,8 +21,6 @@ final class TopStoriesTableViewCell: UITableViewCell {
     /// The story's number of comments.
     @HackRxLabelWrapper(style: .comments) private var commentsLabel: HackRxLabel
 
-    @AutoLayout private var infoStack: UIStackView
-
     private var viewModel: TopStoryViewModel? {
         didSet {
             if let viewModel = viewModel {
@@ -48,6 +46,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
         layoutConstraints()
         contentView.backgroundColor = .white
         backgroundColor = .white
+        accessoryType = .disclosureIndicator
     }
 
     required init?(coder: NSCoder) {
@@ -62,32 +61,31 @@ final class TopStoriesTableViewCell: UITableViewCell {
     // MARK: - Layout
     /// Adds all views to `contentView` as subviews.
     private func addViews() {
+        contentView.addSubview(pointsLabel)
         contentView.addSubview(titleLabel)
-
-        infoStack.addArrangedSubview(pointsLabel)
-        infoStack.addArrangedSubview(authorLabel)
-        infoStack.addArrangedSubview(dateLabel)
-        infoStack.addArrangedSubview(commentsLabel)
-
-        contentView.addSubview(infoStack)
-
-        infoStack.axis = .horizontal
-        infoStack.distribution = .equalSpacing
+        contentView.addSubview(authorLabel)
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(commentsLabel)
     }
 
     /// Bundles all views' `layoutConstraints` function.
     private func layoutConstraints() {
-        layoutInfoStackConstraints()
+        layoutPointsLabelConstraints()
         layoutTitleLabelConstraints()
+        layoutAuthorLabelConstraints()
+        layoutDateLabelConstraints()
+        layoutCommentsLabelConstraints()
     }
 
-    private func layoutInfoStackConstraints() {
+    private func layoutPointsLabelConstraints() {
         let guides = contentView.layoutMarginsGuide
 
         NSLayoutConstraint.activate([
-            infoStack.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
-            infoStack.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
-            infoStack.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
+            pointsLabel.leftAnchor.constraint(equalTo: guides.leftAnchor),
+            pointsLabel.heightAnchor.constraint(equalTo: guides.heightAnchor),
+            pointsLabel.widthAnchor.constraint(equalTo: guides.widthAnchor,
+                                               multiplier: 0.1),
+            pointsLabel.centerYAnchor.constraint(equalTo: guides.centerYAnchor)
         ])
     }
 
@@ -96,10 +94,46 @@ final class TopStoriesTableViewCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: guides.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(lessThanOrEqualTo: guides.trailingAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: infoStack.topAnchor,
-                                                constant: -5)
+            titleLabel.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor,
+                                                constant: 10),
+            titleLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
+        ])
+    }
+
+    private func layoutAuthorLabelConstraints() {
+        let guides = contentView.layoutMarginsGuide
+
+        NSLayoutConstraint.activate([
+            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
+                                             constant: 10),
+            authorLabel.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor,
+                                                 constant: 10),
+            authorLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
+        ])
+    }
+
+    private func layoutDateLabelConstraints() {
+        let guides = contentView.layoutMarginsGuide
+
+        NSLayoutConstraint.activate([
+            dateLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor,
+                                           constant: 10),
+            dateLabel.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor,
+                                               constant: 10),
+            dateLabel.trailingAnchor.constraint(equalTo: commentsLabel.leadingAnchor,
+                                                constant: -5),
+            dateLabel.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
+        ])
+    }
+
+    private func layoutCommentsLabelConstraints() {
+        let guides = contentView.layoutMarginsGuide
+
+        NSLayoutConstraint.activate([
+            commentsLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor,
+                                               constant: 10),
+            commentsLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
+            commentsLabel.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])
     }
 }

@@ -54,7 +54,7 @@ final class HackRxLabel: UILabel {
     /// Styles a `HackRxLabel` as `Style.points`.
     private func stylePoints() {
         font = UIFont.preferredFont(forTextStyle: .body).bold()
-        textColor = .black
+        textColor = .lightGray
         numberOfLines = 0
     }
 
@@ -66,7 +66,7 @@ final class HackRxLabel: UILabel {
 
     /// Styles a `HackRxLabel` as `Style.title`.
     private func styleTitle() {
-        font = UIFont.preferredFont(forTextStyle: .title3).bold()
+        font = UIFont.preferredFont(forTextStyle: .title2).bold()
         textColor = .black
     }
 

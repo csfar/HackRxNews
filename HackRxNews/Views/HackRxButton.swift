@@ -45,16 +45,19 @@ final class HackRxButton: UIButton {
     // MARK: - Styles
     /// Styles a `HackRxButton` as `Style.title`.
     private func styleTitle() {
-
+        setTitleColor(.black, for: .normal)
+        titleLabel?.font = UIFont.preferredFont(forTextStyle: .title3).bold().serif()
     }
 
     /// Styles a `HackRxButton` as `Style.author`.
     private func styleAuthor() {
-
+        setTitleColor(.black, for: .normal)
+        titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
     }
 
     /// Styles a `HackRxButton` as `Style.comments`.
     private func styleComments() {
-
+        setTitleColor(.lightGray, for: .normal)
+        titleLabel?.font = UIFont.preferredFont(forTextStyle: .body)
     }
 }

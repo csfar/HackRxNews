@@ -13,6 +13,8 @@
 		A40F7982256EA26400B1011A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7981256EA26400B1011A /* SceneDelegate.swift */; };
 		A40F7989256EA26600B1011A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40F7988256EA26600B1011A /* Assets.xcassets */; };
 		A40F798C256EA26600B1011A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40F798A256EA26600B1011A /* LaunchScreen.storyboard */; };
+		A42D9450257294C8004B1729 /* HackRxButtonSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42D944F257294C8004B1729 /* HackRxButtonSpec.swift */; };
+		A48DEE74257292BB00899BB4 /* AutoLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */; };
 		A4ABDE392571B40900197D10 /* TopStoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE382571B40900197D10 /* TopStoriesTableViewCell.swift */; };
 		A4ABDE49257280AA00197D10 /* HackRxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE48257280AA00197D10 /* HackRxLabel.swift */; };
 		A4ABDE502572824A00197D10 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE4F2572824A00197D10 /* UIFont+Extensions.swift */; };
@@ -47,6 +49,8 @@
 		A40F7988256EA26600B1011A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40F798B256EA26600B1011A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40F798D256EA26600B1011A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42D944F257294C8004B1729 /* HackRxButtonSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxButtonSpec.swift; sourceTree = "<group>"; };
+		A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutTests.swift; sourceTree = "<group>"; };
 		A4ABDE382571B40900197D10 /* TopStoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTableViewCell.swift; sourceTree = "<group>"; };
 		A4ABDE48257280AA00197D10 /* HackRxLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxLabel.swift; sourceTree = "<group>"; };
 		A4ABDE4F2572824A00197D10 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
@@ -124,6 +128,31 @@
 			path = HackRxNews;
 			sourceTree = "<group>";
 		};
+		A42D944C2572942F004B1729 /* Property Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */,
+			);
+			path = "Property Wrappers";
+			sourceTree = "<group>";
+		};
+		A48DEE77257292C300899BB4 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				A4ABDE7925728ABA00197D10 /* HackRxLabelSpec.swift */,
+				A42D944F257294C8004B1729 /* HackRxButtonSpec.swift */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		A48DEE78257292CA00899BB4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A42D944C2572942F004B1729 /* Property Wrappers */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		A4923CB1257120E000B1D939 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,9 +201,10 @@
 		A4ABDE6125728A4C00197D10 /* HackRxNewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				A48DEE78257292CA00899BB4 /* Tests */,
+				A48DEE77257292C300899BB4 /* Specs */,
 				A4ABDE6225728A4C00197D10 /* HackRxNewsTests.swift */,
 				A4ABDE6425728A4C00197D10 /* Info.plist */,
-				A4ABDE7925728ABA00197D10 /* HackRxLabelSpec.swift */,
 			);
 			path = HackRxNewsTests;
 			sourceTree = "<group>";
@@ -427,7 +457,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4ABDE6325728A4C00197D10 /* HackRxNewsTests.swift in Sources */,
+				A42D9450257294C8004B1729 /* HackRxButtonSpec.swift in Sources */,
 				A4ABDE7A25728ABA00197D10 /* HackRxLabelSpec.swift in Sources */,
+				A48DEE74257292BB00899BB4 /* AutoLayoutTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

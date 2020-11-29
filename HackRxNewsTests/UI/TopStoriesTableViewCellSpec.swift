@@ -24,7 +24,7 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
                                                       numberOfComments: "381 comments",
                                                       points: "999")
                     sut.setUp(with: viewModel)
-                    sut.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 150)
+                    sut.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 100)
                 }
 
                 it("should display and layout data correctly") {

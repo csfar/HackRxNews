@@ -84,7 +84,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
             pointsLabel.leftAnchor.constraint(equalTo: guides.leftAnchor),
             pointsLabel.heightAnchor.constraint(equalTo: guides.heightAnchor),
             pointsLabel.widthAnchor.constraint(equalTo: guides.widthAnchor,
-                                               multiplier: 0.1),
+                                               multiplier: TopStoriesDesignSystem.Cell.pointsWidthMultiplier),
             pointsLabel.centerYAnchor.constraint(equalTo: guides.centerYAnchor)
         ])
     }
@@ -95,7 +95,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: guides.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor,
-                                                constant: 10),
+                                                constant: TopStoriesDesignSystem.Cell.spacingFromPoints),
             titleLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
         ])
     }
@@ -105,9 +105,9 @@ final class TopStoriesTableViewCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
-                                             constant: 10),
+                                             constant: TopStoriesDesignSystem.Cell.defaultSpacing),
             authorLabel.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor,
-                                                 constant: 10),
+                                                 constant: TopStoriesDesignSystem.Cell.spacingFromPoints),
             authorLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
         ])
     }
@@ -117,11 +117,11 @@ final class TopStoriesTableViewCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             dateLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor,
-                                           constant: 10),
+                                           constant: TopStoriesDesignSystem.Cell.defaultSpacing),
             dateLabel.leadingAnchor.constraint(equalTo: pointsLabel.trailingAnchor,
-                                               constant: 10),
+                                               constant: TopStoriesDesignSystem.Cell.spacingFromPoints),
             dateLabel.trailingAnchor.constraint(equalTo: commentsLabel.leadingAnchor,
-                                                constant: -5),
+                                                constant: TopStoriesDesignSystem.Cell.dateSpacingfromComments),
             dateLabel.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])
     }
@@ -131,7 +131,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             commentsLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor,
-                                               constant: 10),
+                                               constant: TopStoriesDesignSystem.Cell.defaultSpacing),
             commentsLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
             commentsLabel.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])

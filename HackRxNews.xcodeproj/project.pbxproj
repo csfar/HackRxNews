@@ -21,6 +21,8 @@
 		A4B01DAF2572C5AB0086A55C /* HackRxLabelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DAE2572C5AB0086A55C /* HackRxLabelWrapper.swift */; };
 		A4B01DB42572CAB90086A55C /* TopStoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DB32572CAB90086A55C /* TopStoryViewModel.swift */; };
 		A4B01DC02572E64B0086A55C /* TopStoriesTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DBF2572E64B0086A55C /* TopStoriesTableViewCellSpec.swift */; };
+		A4B01DC72572E96A0086A55C /* TopStoriesDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */; };
+		A4B01DCE2572F0FC0086A55C /* TopStoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DCD2572F0FC0086A55C /* TopStoriesViewModel.swift */; };
 		A4D53F8A25712446003A244F /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D53F8925712446003A244F /* TopStoriesViewController.swift */; };
 		A4D53F902571249F003A244F /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D53F8F2571249F003A244F /* AutoLayout.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		A4B01DAE2572C5AB0086A55C /* HackRxLabelWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxLabelWrapper.swift; sourceTree = "<group>"; };
 		A4B01DB32572CAB90086A55C /* TopStoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryViewModel.swift; sourceTree = "<group>"; };
 		A4B01DBF2572E64B0086A55C /* TopStoriesTableViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTableViewCellSpec.swift; sourceTree = "<group>"; };
+		A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesDesignSystem.swift; sourceTree = "<group>"; };
+		A4B01DCD2572F0FC0086A55C /* TopStoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewModel.swift; sourceTree = "<group>"; };
 		A4D53F8925712446003A244F /* TopStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		A4D53F8F2571249F003A244F /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
 		A9D653C96011AE329D1F51BD /* Pods-HackRxNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackRxNews.debug.xcconfig"; path = "Target Support Files/Pods-HackRxNews/Pods-HackRxNews.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				A4ABDE372571B3F600197D10 /* Views */,
 				A4D53F8825712388003A244F /* ViewControllers */,
 				A4B01DB22572CAA50086A55C /* ViewModels */,
+				A4B01DC52572E9470086A55C /* Design System */,
 				A4D53F8E25712485003A244F /* Property Wrappers */,
 			);
 			path = HackRxNews;
@@ -204,8 +209,17 @@
 			isa = PBXGroup;
 			children = (
 				A4B01DB32572CAB90086A55C /* TopStoryViewModel.swift */,
+				A4B01DCD2572F0FC0086A55C /* TopStoriesViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4B01DC52572E9470086A55C /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */,
+			);
+			path = "Design System";
 			sourceTree = "<group>";
 		};
 		A4D53F8825712388003A244F /* ViewControllers */ = {
@@ -447,6 +461,8 @@
 				A4D53F902571249F003A244F /* AutoLayout.swift in Sources */,
 				A40F7982256EA26400B1011A /* SceneDelegate.swift in Sources */,
 				A4B01DAF2572C5AB0086A55C /* HackRxLabelWrapper.swift in Sources */,
+				A4B01DCE2572F0FC0086A55C /* TopStoriesViewModel.swift in Sources */,
+				A4B01DC72572E96A0086A55C /* TopStoriesDesignSystem.swift in Sources */,
 				A4ABDE49257280AA00197D10 /* HackRxLabel.swift in Sources */,
 				A4B01DB42572CAB90086A55C /* TopStoryViewModel.swift in Sources */,
 				A4ABDE502572824A00197D10 /* UIFont+Extensions.swift in Sources */,

@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 /// Representation of the `Top Stories` section.
 final class TopStoriesViewController: UIViewController {
     // MARK: - Properties
     /// The `UITableView` used to display the stories.
     @AutoLayout private var storiesTableView: UITableView
+
+    /// The dispose bag used by this object.
+    private let disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Init
     /// Initializes a new instance of this type.
@@ -26,29 +31,30 @@ final class TopStoriesViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
-        layoutConstraints()
+
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
+        title = "Top Stories"
+
+        setUpTableView()
+        layoutTableViewConstraints()
     }
 
     // MARK: - Views setup
-    /// Bundles all views' `setUp` function.
-    private func setUpViews() {
-        setUpTableView()
-    }
-
+    /// Sets up the `storiesTableView`.
     private func setUpTableView() {
-        storiesTableView.delegate = self
+        storiesTableView.rx.setDelegate(self).disposed(by: disposeBag)
         storiesTableView.dataSource = self
         storiesTableView.register(TopStoriesTableViewCell.self,
                                   forCellReuseIdentifier: TopStoriesTableViewCell.identifier)
-
         storiesTableView.rowHeight = UITableView.automaticDimension
         storiesTableView.estimatedRowHeight = 100
+
     }
 
     // MARK: - Layout
     /// Bundles all views' `layoutConstraints` function.
-    private func layoutConstraints() {
+    private func layoutTableViewConstraints() {
         view.addSubview(storiesTableView)
 
         let guide = view.safeAreaLayoutGuide

@@ -6,16 +6,19 @@
 //
 
 import XCTest
+import Nimble
 @testable import HackRxNews
 
 final class AutoLayoutTests: XCTestCase {
     @AutoLayout var sut: UIView
 
     func test_TranslatesAutoresizingMaskIntoConstraints_equalFalse() {
-        XCTAssertFalse(sut.translatesAutoresizingMaskIntoConstraints)
+        let view = sut
+        expect(view.translatesAutoresizingMaskIntoConstraints).to(beFalse())
     }
 
     func test_Frame_asZero() {
-        XCTAssertEqual(sut.frame, CGRect(x: 0, y: 0, width: 0, height: 0))
+        let view = sut
+        expect(view.frame).to(equal(CGRect(x: 0, y: 0, width: 0, height: 0)))
     }
 }

@@ -18,9 +18,14 @@ final class TopStoriesViewController: UIViewController {
     /// The dispose bag used by this object.
     private let disposeBag: DisposeBag = DisposeBag()
 
+    /// The `ViewModel` responsible for this `View`.
+    private let viewModel: TopStoriesViewModel
+
     // MARK: - Init
     /// Initializes a new instance of this type.
-    init() {
+    /// - Parameter viewModel: The `ViewModel` responsible for this `View`.
+    init(viewModel: TopStoriesViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -43,13 +48,16 @@ final class TopStoriesViewController: UIViewController {
     // MARK: - Views setup
     /// Sets up the `storiesTableView`.
     private func setUpTableView() {
-        storiesTableView.rx.setDelegate(self).disposed(by: disposeBag)
-        storiesTableView.dataSource = self
         storiesTableView.register(TopStoriesTableViewCell.self,
                                   forCellReuseIdentifier: TopStoriesTableViewCell.identifier)
         storiesTableView.rowHeight = UITableView.automaticDimension
         storiesTableView.estimatedRowHeight = 100
 
+        viewModel.stories.bind(to: storiesTableView.rx.items(cellIdentifier: TopStoriesTableViewCell.identifier,
+                                                             cellType: TopStoriesTableViewCell.self)) { (_, element, cell) in
+            let viewModel = TopStoryViewModel(item: element)
+            cell.setUp(with: viewModel)
+        }.disposed(by: disposeBag)
     }
 
     // MARK: - Layout
@@ -66,33 +74,4 @@ final class TopStoriesViewController: UIViewController {
             storiesTableView.heightAnchor.constraint(equalTo: guide.heightAnchor)
         ])
     }
-}
-
-// MARK: - UITableViewDelegate
-extension TopStoriesViewController: UITableViewDelegate {
-
-}
-
-// MARK: - UITableViewDataSource
-extension TopStoriesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell =
-                tableView.dequeueReusableCell(withIdentifier: TopStoriesTableViewCell.identifier)
-                as? TopStoriesTableViewCell else {
-            return UITableViewCell()
-        }
-
-        let story = TopStoryViewModel(title: "Show HN: HackRxNews",
-                                      author: "by janejohn",
-                                      dateOfPosting: "8 hours ago",
-                                      numberOfComments: "81 comments",
-                                      points: "999")
-        cell.setUp(with: story)
-        return cell
-    }
-
 }

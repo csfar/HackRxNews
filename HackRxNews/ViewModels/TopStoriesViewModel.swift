@@ -8,14 +8,18 @@
 import RxSwift
 import RxCocoa
 
+/// `ViewModel` responsible for `Top Stories`.
 final class TopStoriesViewModel {
 
+    /// The relay stream for `ItemModel`.
     private var storiesRelay: BehaviorRelay<[ItemModel]> = BehaviorRelay(value: [])
 
+    /// Initializes a new instance of this type.
     init() {
         storiesRelay.accept(ItemModel.generate(30))
     }
 
+    /// The top stories.
     var stories: Observable<[ItemModel]> {
         storiesRelay.asObservable()
     }

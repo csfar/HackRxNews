@@ -7,13 +7,21 @@
 
 import Foundation
 
+/// `ViewModel` responsible for a single `Top Story`.
 struct TopStoryViewModel {
+    /// The story's title.
     let title: String
+    /// The story's author.
     let author: String
+    /// The story's date of posting.
     let dateOfPosting: String
+    /// The story's number of comments.
     let numberOfComments: String
+    /// The story's number of points.
     let points: String
 
+    /// Initializes a new instance of this type.
+    /// - Parameter item: Representation of an item from the API.
     init(item: ItemModel) {
         self.title = item.title
         self.author = "by \(item.by)"

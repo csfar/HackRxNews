@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// `ViewModel` responsible for a single `Top Story`.
+/// `ViewModel` for a `Top Story`.
 struct TopStoryViewModel {
     /// The story's title.
     let title: String
@@ -22,7 +22,7 @@ struct TopStoryViewModel {
 
     /// Initializes a new instance of this type.
     /// - Parameter item: Representation of an item from the API.
-    init(item: ItemModel) {
+    init(item: ItemModel, relativeToDate: Date = Date()) {
         self.title = item.title
         self.author = "by \(item.by)"
 
@@ -30,7 +30,7 @@ struct TopStoryViewModel {
         let dateFormatter = RelativeDateTimeFormatter()
         dateFormatter.unitsStyle = .full
 
-        self.dateOfPosting = dateFormatter.localizedString(for: dateOfCreation, relativeTo: Date())
+        self.dateOfPosting = dateFormatter.localizedString(for: dateOfCreation, relativeTo: relativeToDate)
 
         self.numberOfComments = "\(item.descendants) comments"
         self.points = "\(item.score)"

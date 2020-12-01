@@ -21,6 +21,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
     /// The story's number of comments.
     @HackRxLabelWrapper(style: .comments) private var commentsLabel: HackRxLabel
 
+    /// The `ViewModel`for this `View`.
     private var viewModel: TopStoryViewModel? {
         didSet {
             if let viewModel = viewModel {

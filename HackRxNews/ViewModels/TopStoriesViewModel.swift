@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-/// `ViewModel` responsible for `Top Stories`.
+/// `ViewModel` for `Top Stories`.
 final class TopStoriesViewModel {
 
     /// The relay stream for `ItemModel`.

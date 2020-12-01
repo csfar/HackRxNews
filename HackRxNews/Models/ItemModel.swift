@@ -53,6 +53,38 @@ struct ItemModel: Decodable {
 
     /// The total number of comments.
     let descendants: Int
+
+    init(id: Int = 0,
+         deleted: Bool = false,
+         type: String = "",
+         by: String = "",
+         time: TimeInterval = 1,
+         text: String = "",
+         dead: Bool = false,
+         parent: Int = 0,
+         poll: Int = 0,
+         kids: [Int] = [],
+         url: String = "",
+         score: Int = 0,
+         title: String = "",
+         parts: [Int] = [],
+         descendants: Int = 0) {
+        self.id = id
+        self.deleted = deleted
+        self.type = type
+        self.by = by
+        self.time = time
+        self.text = text
+        self.dead = dead
+        self.parent = parent
+        self.poll = poll
+        self.kids = kids
+        self.url = url
+        self.score = score
+        self.title = title
+        self.parts = parts
+        self.descendants = descendants
+    }
 }
 
 #if DEBUG

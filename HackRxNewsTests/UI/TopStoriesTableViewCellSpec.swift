@@ -18,11 +18,12 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
             context("when initialized with a ViewModel") {
                 beforeEach {
                     sut = TopStoriesTableViewCell(style: .default, reuseIdentifier: TopStoriesTableViewCell.identifier)
-                    let viewModel = TopStoryViewModel(title: "Show HN: HackRxNews",
-                                                      author: "by janejohn",
-                                                      dateOfPosting: "8 hours ago",
-                                                      numberOfComments: "381 comments",
-                                                      points: "999")
+                    let item = ItemModel(by: "janejohn",
+                                         score: 999,
+                                         title: "Show HN: HackRxNews",
+                                         descendants: 381)
+                    let viewModel = TopStoryViewModel(item: item,
+                                                      relativeToDate: Date(timeIntervalSince1970: 1000))
                     sut.setUp(with: viewModel)
                     sut.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 100)
                 }

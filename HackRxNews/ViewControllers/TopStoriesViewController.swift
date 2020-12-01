@@ -18,7 +18,7 @@ final class TopStoriesViewController: UIViewController {
     /// The dispose bag used by this object.
     private let disposeBag: DisposeBag = DisposeBag()
 
-    /// The `ViewModel` responsible for this `View`.
+    /// The `ViewModel` for this `View`.
     private let viewModel: TopStoriesViewModel
 
     // MARK: - Init

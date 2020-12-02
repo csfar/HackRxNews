@@ -22,6 +22,7 @@ struct TopStoryViewModel {
 
     /// Initializes a new instance of this type.
     /// - Parameter item: Representation of an item from the API.
+    /// - Parameter relativeToDate: The relative date used when formatting. **For testing purposes only.**
     init(item: ItemModel, relativeToDate: Date = Date()) {
         self.title = item.title
         self.author = "by \(item.by)"

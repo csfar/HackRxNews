@@ -13,7 +13,7 @@ import RxSwift
 final class TopStoriesViewController: UIViewController {
     // MARK: - Properties
     /// The `UITableView` used to display the stories.
-    @AutoLayout private var storiesTableView: UITableView
+    @AutoLayout private var storiesTableView: TopStoriesTableView
 
     /// The dispose bag used by this object.
     private let disposeBag: DisposeBag = DisposeBag()
@@ -34,6 +34,10 @@ final class TopStoriesViewController: UIViewController {
     }
 
     // MARK: - Lifecycle
+    override func loadView() {
+        view = storiesTableView
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,37 +45,17 @@ final class TopStoriesViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Top Stories"
 
-        setUpTableView()
-        layoutTableViewConstraints()
+        setUpTableViewBindings()
     }
 
     // MARK: - Views setup
-    /// Sets up the `storiesTableView`.
-    private func setUpTableView() {
-        storiesTableView.register(TopStoriesTableViewCell.self,
-                                  forCellReuseIdentifier: TopStoriesTableViewCell.identifier)
-        storiesTableView.rowHeight = UITableView.automaticDimension
-        storiesTableView.estimatedRowHeight = 100
+    /// Sets up the `storiesTableView`'s bindings.
+    private func setUpTableViewBindings() {
 
         viewModel.stories.bind(to: storiesTableView.rx.items(cellIdentifier: TopStoriesTableViewCell.identifier,
                                                              cellType: TopStoriesTableViewCell.self)) { (_, element, cell) in
             let viewModel = TopStoryViewModel(item: element)
             cell.setUp(with: viewModel)
         }.disposed(by: disposeBag)
-    }
-
-    // MARK: - Layout
-    /// Bundles all views' `layoutConstraints` function.
-    private func layoutTableViewConstraints() {
-        view.addSubview(storiesTableView)
-
-        let guide = view.safeAreaLayoutGuide
-
-        NSLayoutConstraint.activate([
-            storiesTableView.centerYAnchor.constraint(equalTo: guide.centerYAnchor),
-            storiesTableView.centerXAnchor.constraint(equalTo: guide.centerXAnchor),
-            storiesTableView.widthAnchor.constraint(equalTo: guide.widthAnchor),
-            storiesTableView.heightAnchor.constraint(equalTo: guide.heightAnchor)
-        ])
     }
 }

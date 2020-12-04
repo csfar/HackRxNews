@@ -22,17 +22,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
     @HackRxLabelWrapper(style: .comments) private var commentsLabel: HackRxLabel
 
     /// The `ViewModel`for this `View`.
-    private var viewModel: TopStoryViewModel? {
-        didSet {
-            if let viewModel = viewModel {
-                titleLabel.text = viewModel.title
-                authorLabel.text = viewModel.author
-                pointsLabel.text = viewModel.points
-                dateLabel.text = viewModel.dateOfPosting
-                commentsLabel.text = viewModel.numberOfComments
-            }
-        }
-    }
+    private var viewModel: TopStoryViewModel?
 
     // MARK: - Identifier
     /// The cell's identifier.
@@ -55,8 +45,12 @@ final class TopStoriesTableViewCell: UITableViewCell {
     }
 
     // MARK: - API
-    func setUp(with viewModel: TopStoryViewModel) {
-        self.viewModel = viewModel
+    func with(storyID: StoryID) {
+        guard let viewModel = viewModel else {
+            return
+        }
+
+        
     }
 
     // MARK: - Layout

@@ -4,6 +4,7 @@
 //
 //  Created by Artur Carneiro on 02/12/20.
 //
+//swiftlint disable_rules: force_cast
 
 import Quick
 import Nimble
@@ -37,11 +38,12 @@ final class TopStoriesTableViewSpec: QuickSpec {
 
                     sut = TopStoriesTableView()
 
+
                     itemsRelay.bind(to: sut.rx.items(cellIdentifier: TopStoriesTableViewCell.identifier,
                                                      cellType: TopStoriesTableViewCell.self)) { (_, item, cell) in
                         let viewModel = TopStoryViewModel(item: item, relativeToDate: Date(timeIntervalSince1970: 1000))
                         cell.setUp(with: viewModel)
-                    }.disposed(by: self.disposeBag) // Is it okay to reference `self` in a Example/Example Group
+                    }.disposed(by: self.disposeBag) // Is it okay to reference `self` in a Example/Example Group?
                 }
             }
 

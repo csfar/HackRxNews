@@ -53,9 +53,8 @@ final class TopStoriesViewController: UIViewController {
     private func setUpTableViewBindings() {
 
         viewModel.stories.bind(to: storiesTableView.rx.items(cellIdentifier: TopStoriesTableViewCell.identifier,
-                                                             cellType: TopStoriesTableViewCell.self)) { (_, element, cell) in
-            let viewModel = TopStoryViewModel(item: element)
-            cell.setUp(with: viewModel)
+                                                             cellType: TopStoriesTableViewCell.self)) { (_, storyID, cell) in
+            cell.with(storyID: storyID)
         }.disposed(by: disposeBag)
     }
 }

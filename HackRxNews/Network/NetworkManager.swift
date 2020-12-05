@@ -25,7 +25,7 @@ final class NetworkManager {
     /// Performs a request using the `service` provided to the `NetworkManager`.
     /// - Parameter request: The `URLRequest` used in the request.
     /// - Returns: An `Observable` of type `T`.
-    func perform<T: Decodable>(_ request: URLRequest) -> Observable<T> {
+    func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Observable<T> {
         return Observable.create { [weak self] observer in
             let serviceTask = self?.service.dataTask(with: request, completionHandler: { (data, response, error) in
                 if error != nil {
@@ -45,7 +45,6 @@ final class NetworkManager {
 
                     do {
                         let decoded = try JSONDecoder().decode(T.self, from: unwrappedData)
-
                         observer.onNext(decoded)
                     } catch {
                         observer.onError(NetworkServiceError.decodingFailed)
@@ -58,6 +57,7 @@ final class NetworkManager {
                 observer.onCompleted()
             })
             serviceTask?.resume()
+            
             return Disposables.create {
                 serviceTask?.cancel()
             }

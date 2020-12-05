@@ -13,7 +13,7 @@ struct ItemModel: Decodable {
     let id: Int
 
     /// Whether or not an item is deleted.
-    let deleted: Bool
+    let deleted: Bool?
 
     /// The type of the item.
     let type: String
@@ -25,19 +25,19 @@ struct ItemModel: Decodable {
     let time: TimeInterval
 
     /// The item's content.
-    let text: String
+    let text: String?
 
     /// Whether or not an item is dead.
-    let dead: Bool
+    let dead: Bool?
 
     /// The item's parent.
-    let parent: Int
+    let parent: Int?
 
     /// ?
-    let poll: Int
+    let poll: Int?
 
     /// The item's commnets as IDs.
-    let kids: [Int]
+    let kids: [Int]?
 
     /// The item's URL
     let url: String
@@ -49,7 +49,7 @@ struct ItemModel: Decodable {
     let title: String
 
     /// ?
-    let parts: [Int]
+    let parts: [Int]?
 
     /// The total number of comments.
     let descendants: Int

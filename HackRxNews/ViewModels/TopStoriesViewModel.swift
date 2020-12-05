@@ -11,16 +11,28 @@ import RxCocoa
 /// `ViewModel` for `Top Stories`.
 final class TopStoriesViewModel {
 
-    /// The relay stream for `StoryID`.
-    private var storiesRelay: BehaviorRelay<[TopStoryViewModel]> = BehaviorRelay(value: [])
+    /// The manager used for performing HTTP requests.
+    private let networkManager: NetworkManager
+
+    /// The dispose  bag used by this object.
+    private let disposeBag: DisposeBag
 
     /// Initializes a new instance of this type.
-    init() {
-        storiesRelay.accept([])
+    /// - Parameter networkManager: The manager used for performing HTTP requests.
+    init(networkManager: NetworkManager) {
+        self.networkManager = networkManager
+        self.disposeBag = DisposeBag()
+
+        self.stories = Driver.never()
+
+        let request = URLRequest(url: URL(string: "https://hacker-news.firebaseio.com/v0/topstories.json")!)
+
+        self.stories = self.networkManager.perform(request, for: [StoryID].self)
+            .map { $0.map { TopStoryViewModel(storyID: $0, networkManager: networkManager) } }
+            .observe(on: MainScheduler.instance)
+            .asDriver(onErrorJustReturn: [])
     }
 
     /// The top stories.
-    var stories: Observable<[TopStoryViewModel]> {
-        storiesRelay.asObservable()
-    }
+    var stories: Driver<[TopStoryViewModel]>
 }

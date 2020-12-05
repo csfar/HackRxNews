@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-/// Representation of a top story in the `Top Stories` section.
+/// Representation of a top story in the `Top Stories` screen.
 final class TopStoriesTableViewCell: UITableViewCell {
     // MARK: - Properties
     /// The story's title.
@@ -21,8 +23,41 @@ final class TopStoriesTableViewCell: UITableViewCell {
     /// The story's number of comments.
     @HackRxLabelWrapper(style: .comments) private var commentsLabel: HackRxLabel
 
+    /// The dispose bag used by this object.
+    private var disposeBag: DisposeBag?
+
     /// The `ViewModel`for this `View`.
-    private var viewModel: TopStoryViewModel?
+    private var viewModel: TopStoryViewModel? {
+        didSet {
+            guard let viewModel = viewModel else {
+                return
+            }
+
+            let disposeBag = DisposeBag()
+
+            viewModel.title
+                .drive(titleLabel.rx.text)
+                .disposed(by: disposeBag)
+
+            viewModel.author
+                .drive(authorLabel.rx.text)
+                .disposed(by: disposeBag)
+
+            viewModel.points
+                .drive(pointsLabel.rx.text)
+                .disposed(by: disposeBag)
+
+            viewModel.dateOfPosting
+                .drive(dateLabel.rx.text)
+                .disposed(by: disposeBag)
+
+            viewModel.numberOfComments
+                .drive(commentsLabel.rx.text)
+                .disposed(by: disposeBag)
+                
+            self.disposeBag = disposeBag
+        }
+    }
 
     // MARK: - Identifier
     /// The cell's identifier.
@@ -44,13 +79,19 @@ final class TopStoriesTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - API
-    func with(storyID: StoryID) {
-        guard let viewModel = viewModel else {
-            return
-        }
+    // MARK: Lifecycle
+    override func prepareForReuse() {
+        super.prepareForReuse()
 
-        
+        self.viewModel = nil
+        self.disposeBag = nil
+    }
+
+    // MARK: - API
+    /// Sets up the `ViewModel`.
+    func setUp(with viewModel: TopStoryViewModel) {
+        self.viewModel = viewModel
+        viewModel.fetch()
     }
 
     // MARK: - Layout

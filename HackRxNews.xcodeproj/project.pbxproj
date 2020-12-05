@@ -145,8 +145,6 @@
 		A40F797E256EA26400B1011A /* HackRxNews */ = {
 			isa = PBXGroup;
 			children = (
-				A4635A5F257A734400A85EAD /* Network */,
-				A4635A58257A6BA100A85EAD /* Typealiases */,
 				A4923CB1257120E000B1D939 /* Application */,
 				A4ABDE4E2572823A00197D10 /* Extensions */,
 				A4923CB2257120EB00B1D939 /* Resources */,
@@ -154,7 +152,9 @@
 				A4D53F8825712388003A244F /* ViewControllers */,
 				A4B01DB22572CAA50086A55C /* ViewModels */,
 				A4B01DD52573DFE20086A55C /* Models */,
+				A4635A5F257A734400A85EAD /* Network */,
 				A4B01DC52572E9470086A55C /* Design System */,
+				A4635A58257A6BA100A85EAD /* Typealiases */,
 				A4D53F8E25712485003A244F /* Property Wrappers */,
 			);
 			path = HackRxNews;

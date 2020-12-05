@@ -7,4 +7,5 @@
 
 import Foundation
 
+/// A story's ID.
 typealias StoryID = Int

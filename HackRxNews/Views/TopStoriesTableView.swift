@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// Representation of the top stories in the `Top Stories` screen.
 final class TopStoriesTableView: UITableView {
 
     override init(frame: CGRect, style: UITableView.Style) {
@@ -18,10 +19,11 @@ final class TopStoriesTableView: UITableView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    /// Sets up the `UITableView`.
     private func setUp() {
         register(TopStoriesTableViewCell.self,
                                   forCellReuseIdentifier: TopStoriesTableViewCell.identifier)
         rowHeight = UITableView.automaticDimension
-        estimatedRowHeight = 100
+        estimatedRowHeight = 125
     }
 }

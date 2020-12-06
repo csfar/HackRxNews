@@ -14,6 +14,7 @@ final class TopStoriesViewModel {
     /// The manager used for performing HTTP requests.
     private let networkManager: NetworkManager
 
+    /// The `TopStoryViewModel` relay. Used by a `Driver` to drive the UI.
     private let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
 
     /// The dispose  bag used by this object.
@@ -27,9 +28,13 @@ final class TopStoriesViewModel {
         self.disposeBag = DisposeBag()
         self.viewModelsRelay = BehaviorRelay(value: [])
 
-        let request = URLRequest(url: URL(string: "https://hacker-news.firebaseio.com/v0/topstories.json")!)
+        guard let endpoint = Endpoint.topStories.url else {
+            preconditionFailure("Failed to get URL from Endpoint")
+        }
 
-        self.networkManager.perform(request, for: [StoryID].self)
+        let request = URLRequest(url: endpoint)
+
+        self.networkManager.perform(request, for: [ItemID].self)
             .observe(on: MainScheduler.instance)
             .map { $0.map { [weak self] in TopStoryViewModel(storyID: $0, networkManager: self?.networkManager) } }
             .subscribe { [weak self] (event) in

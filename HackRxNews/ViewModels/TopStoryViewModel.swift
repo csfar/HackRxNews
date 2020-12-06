@@ -12,7 +12,7 @@ import RxCocoa
 final class TopStoryViewModel {
     // MARK: - Properties
     /// The story's ID.
-    private let storyID: StoryID
+    private let storyID: ItemID
 
     /// Whether or not the `ViewModel` has fetched already.
     private var hasFetched: Bool = false
@@ -33,7 +33,7 @@ final class TopStoryViewModel {
     /// Initializes a new instance of this type.
     /// - Parameter storyID: The story's ID.
     /// - Parameter networkManager: The manager used for performing HTTP requests.
-    init(storyID: StoryID,
+    init(storyID: ItemID,
          networkManager: NetworkManager?) {
         self.storyID = storyID
         self.disposeBag = DisposeBag()
@@ -41,8 +41,14 @@ final class TopStoryViewModel {
 
         if let unwrappedNetworkManager = networkManager {
             self.networkManager = unwrappedNetworkManager
-            let urlRequest = URLRequest(url: URL(string: "https://hacker-news.firebaseio.com/v0/item/\(storyID).json")!)
-            self.itemObservable = unwrappedNetworkManager.perform(urlRequest, for: ItemModel.self)
+
+            guard let url = Endpoint.item(storyID).url else {
+                preconditionFailure("Failed to URL from Endpoint")
+            }
+
+            let request = URLRequest(url: url)
+
+            self.itemObservable = unwrappedNetworkManager.perform(request, for: ItemModel.self)
                 .observe(on: MainScheduler.instance)
         } else {
             self.itemObservable = Observable.empty()

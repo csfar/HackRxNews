@@ -43,6 +43,7 @@ final class TopStoryViewModel {
             self.networkManager = unwrappedNetworkManager
             let urlRequest = URLRequest(url: URL(string: "https://hacker-news.firebaseio.com/v0/item/\(storyID).json")!)
             self.itemObservable = unwrappedNetworkManager.perform(urlRequest, for: ItemModel.self)
+                .observe(on: MainScheduler.instance)
         } else {
             self.itemObservable = Observable.empty()
         }

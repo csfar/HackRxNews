@@ -19,6 +19,8 @@
 		A425918D257D47320041416D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A425918C257D47320041416D /* Endpoint.swift */; };
 		A433D2042575243400E15A4F /* TopStoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433D2032575243400E15A4F /* TopStoriesViewModel.swift */; };
 		A433D20A257526CB00E15A4F /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A433D209257526CB00E15A4F /* ItemModel.swift */; };
+		A43BFF45257FE07500612BE1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF44257FE07500612BE1 /* Coordinator.swift */; };
+		A43BFF4B257FE10900612BE1 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */; };
 		A4635A5A257A6BB200A85EAD /* ItemIDTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A59257A6BB200A85EAD /* ItemIDTypealias.swift */; };
 		A4635A61257A736000A85EAD /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A60257A736000A85EAD /* NetworkManager.swift */; };
 		A4635A65257A743500A85EAD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A64257A743500A85EAD /* NetworkService.swift */; };
@@ -69,6 +71,8 @@
 		A425918C257D47320041416D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A433D2032575243400E15A4F /* TopStoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewModel.swift; sourceTree = "<group>"; };
 		A433D209257526CB00E15A4F /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		A43BFF44257FE07500612BE1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		A4635A59257A6BB200A85EAD /* ItemIDTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemIDTypealias.swift; sourceTree = "<group>"; };
 		A4635A60257A736000A85EAD /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A4635A64257A743500A85EAD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			children = (
 				A4923CB1257120E000B1D939 /* Application */,
 				A4ABDE4E2572823A00197D10 /* Extensions */,
+				A43BFF43257FE06700612BE1 /* Coordinators */,
 				A425918B257D246D0041416D /* Enums */,
 				A4923CB2257120EB00B1D939 /* Resources */,
 				A4ABDE372571B3F600197D10 /* Views */,
@@ -192,6 +197,15 @@
 				A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */,
 			);
 			path = "Property Wrappers";
+			sourceTree = "<group>";
+		};
+		A43BFF43257FE06700612BE1 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				A43BFF44257FE07500612BE1 /* Coordinator.swift */,
+				A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 		A4635A58257A6BA100A85EAD /* Typealiases */ = {
@@ -575,8 +589,10 @@
 				A433D2042575243400E15A4F /* TopStoriesViewModel.swift in Sources */,
 				A4635A6D257A756200A85EAD /* URLSession+Extensions.swift in Sources */,
 				A40998702577D49800B3CA45 /* TopStoriesTableView.swift in Sources */,
+				A43BFF4B257FE10900612BE1 /* FeedCoordinator.swift in Sources */,
 				A4B01DC72572E96A0086A55C /* TopStoriesDesignSystem.swift in Sources */,
 				A4635A65257A743500A85EAD /* NetworkService.swift in Sources */,
+				A43BFF45257FE07500612BE1 /* Coordinator.swift in Sources */,
 				A425918D257D47320041416D /* Endpoint.swift in Sources */,
 				A4ABDE49257280AA00197D10 /* HackRxLabel.swift in Sources */,
 				A4635A5A257A6BB200A85EAD /* ItemIDTypealias.swift in Sources */,

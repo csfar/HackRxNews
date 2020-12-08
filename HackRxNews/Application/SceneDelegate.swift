@@ -17,10 +17,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: windowScene)
-        let viewController = TopStoriesViewController(viewModel: TopStoriesViewModel(networkManager: NetworkManager()))
-        let navigationController = UINavigationController(rootViewController: viewController)
+
+        let navigationController = UINavigationController()
+        let networkManager = NetworkManager()
+        let coordinator = FeedCoordinator(navigationController: navigationController, networkManager: networkManager)
+
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+
+        coordinator.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

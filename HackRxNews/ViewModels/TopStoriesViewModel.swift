@@ -17,13 +17,19 @@ final class TopStoriesViewModel {
     /// The `TopStoryViewModel` relay. Used by a `Driver` to drive the UI.
     private let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
 
+    /// The Coordinator attatched to this ViewModel.
+    private let coordinator: FeedCoordinator
+
     /// The dispose  bag used by this object.
     private let disposeBag: DisposeBag
 
     // MARK: - Init
     /// Initializes a new instance of this type.
     /// - Parameter networkManager: The manager used for performing HTTP requests.
-    init(networkManager: NetworkManager) {
+    /// - Parameter coordinator: The Coordinator attatched to this ViewModel.
+    init(networkManager: NetworkManager,
+         coordinator: FeedCoordinator) {
+        self.coordinator = coordinator
         self.networkManager = networkManager
         self.disposeBag = DisposeBag()
         self.viewModelsRelay = BehaviorRelay(value: [])

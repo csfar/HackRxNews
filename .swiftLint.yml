@@ -1,6 +1,7 @@
 # rule identifiers to opt in
 excluded:
   - Pods
+  - HackRxNewsTests
   
 opt_in_rules:
   - closure_end_indentation

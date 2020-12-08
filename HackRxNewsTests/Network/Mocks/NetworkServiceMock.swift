@@ -42,7 +42,8 @@ final class NetworkServiceMock: NetworkService {
             completionHandler(nil, nil, NetworkServiceError.requestFailed)
             return NetworkServiceDataTaskMock()
         case .unexpectedResponseType:
-            completionHandler(nil, nil, NetworkServiceError.unexpectedResponseType)
+            let response = URLResponse()
+            completionHandler(nil, response, NetworkServiceError.unexpectedResponseType)
             return NetworkServiceDataTaskMock()
         case .missingData:
             let response = HTTPURLResponse(url: with.url!, statusCode: statusCode, httpVersion: nil, headerFields: nil)

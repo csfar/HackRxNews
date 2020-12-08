@@ -17,4 +17,8 @@ final class NetworkServiceDataTaskMock: URLSessionDataTask {
     override func resume() {
         return
     }
+
+    override func cancel() {
+        return
+    }
 }

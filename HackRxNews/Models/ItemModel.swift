@@ -87,24 +87,22 @@ struct ItemModel: Decodable {
     }
 }
 
-#if DEBUG
-extension ItemModel {
-    static func generate(_ amount: Int) -> [ItemModel] {
-        return Array(repeating: ItemModel(id: 1,
-                                          deleted: false,
-                                          type: "story",
-                                          by: "janejohn",
-                                          time: 1606703820,
-                                          text: "",
-                                          dead: false,
-                                          parent: 0,
-                                          poll: 0,
-                                          kids: [],
-                                          url: "",
-                                          score: 999,
-                                          title: "Show HN: HackRxNews",
-                                          parts: [],
-                                          descendants: 381), count: amount)
+extension ItemModel: Equatable {
+    static func ==(lhs: ItemModel, rhs: ItemModel) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.deleted == rhs.deleted &&
+            lhs.type == rhs.type &&
+            lhs.by == rhs.by &&
+            lhs.time == rhs.time &&
+            lhs.text == rhs.text &&
+            lhs.dead == rhs.dead &&
+            lhs.parent == rhs.parent &&
+            lhs.poll == rhs.poll &&
+            lhs.kids == rhs.kids &&
+            lhs.url == rhs.url &&
+            lhs.score == rhs.score &&
+            lhs.title == rhs.title &&
+            lhs.parts == rhs.parts &&
+            lhs.descendants == rhs.descendants
     }
 }
-#endif

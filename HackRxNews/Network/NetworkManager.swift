@@ -28,7 +28,7 @@ final class NetworkManager {
     func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Observable<T> {
         return Observable.create { [weak self] observer in
             let serviceTask = self?.service.dataTask(with: request, completionHandler: { (data, response, error) in
-                if error != nil {
+                if error != nil && response == nil {
                     observer.onError(NetworkServiceError.requestFailed)
                 }
 

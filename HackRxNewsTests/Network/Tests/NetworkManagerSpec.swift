@@ -27,7 +27,6 @@ final class NetworkManagerSpec: QuickSpec {
 
                 afterEach {
                     disposeBag = nil
-                    print(service.state)
                     service = nil
                     sut = nil
                 }

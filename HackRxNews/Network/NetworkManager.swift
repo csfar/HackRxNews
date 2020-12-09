@@ -7,7 +7,7 @@
 
 import RxSwift
 
-/// Object responsible for managing network requests.
+/// Responsible for managing network requests.
 /// Stubbing `NetworkService` is suggested when testing.
 final class NetworkManager {
 
@@ -24,6 +24,7 @@ final class NetworkManager {
     //- MARK: API
     /// Performs a request using the `service` provided to the `NetworkManager`.
     /// - Parameter request: The `URLRequest` used in the request.
+    /// - Parameter for: The type of `T`.
     /// - Returns: An `Observable` of type `T`.
     func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Observable<T> {
         return Observable.create { [weak self] observer in

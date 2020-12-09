@@ -39,7 +39,7 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
                 }
 
                 it("should layout and display data correctly") {
-                    expect(sut).toEventually(haveValidSnapshot(named:"hackrx_top_stories_cell"), timeout: .milliseconds(500))
+                    expect(sut).toEventually(haveValidSnapshot(named:"hackrx_top_stories_cell"), timeout: .seconds(1))
                 }
             }
         }

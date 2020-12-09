@@ -43,7 +43,7 @@ final class TopStoryViewModel {
             self.networkManager = unwrappedNetworkManager
 
             guard let url = Endpoint.item(storyID).url else {
-                preconditionFailure("Failed to URL from Endpoint")
+                preconditionFailure("Failed to get URL from Endpoint")
             }
 
             let request = URLRequest(url: url)
@@ -59,12 +59,12 @@ final class TopStoryViewModel {
     /// The story's title.
     var title: Driver<String> {
         return itemRelay.map { $0.title }
-            .asDriver(onErrorJustReturn: "TITLE")
+            .asDriver(onErrorJustReturn: "Title")
     }
     /// The story's author.
     var author: Driver<String> {
         return itemRelay.map { "by \($0.by)" }
-            .asDriver(onErrorJustReturn: "AUTHOR")
+            .asDriver(onErrorJustReturn: "Author")
     }
     /// The story's date of posting.
     var dateOfPosting: Driver<String> {
@@ -74,12 +74,12 @@ final class TopStoryViewModel {
             dateFormatter.unitsStyle = .full
 
             return dateFormatter.localizedString(for: dateOfCreation, relativeTo: Date())
-        }.asDriver(onErrorJustReturn: "DATE")
+        }.asDriver(onErrorJustReturn: "Date")
     }
     /// The story's number of comments.
     var numberOfComments: Driver<String> {
         return itemRelay.map { "\($0.descendants) comments" }
-            .asDriver(onErrorJustReturn: "COMMENTS")
+            .asDriver(onErrorJustReturn: "Comments")
     }
     /// The story's number of points.
     var points: Driver<String> {

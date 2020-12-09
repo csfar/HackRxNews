@@ -1,5 +1,5 @@
 //
-//  ItemIDTypealias.swift
+//  ItemID.swift
 //  HackRxNews
 //
 //  Created by Artur Carneiro on 04/12/20.

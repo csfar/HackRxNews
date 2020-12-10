@@ -37,6 +37,7 @@
 		A4B01DC72572E96A0086A55C /* TopStoriesDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */; };
 		A4D53F8A25712446003A244F /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D53F8925712446003A244F /* TopStoriesViewController.swift */; };
 		A4D53F902571249F003A244F /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D53F8F2571249F003A244F /* AutoLayout.swift */; };
+		A4E210E025824F65000C6D56 /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E210DF25824F65000C6D56 /* TopStoriesViewController.swift */; };
 		A4E98316257D1E4B002BDFA6 /* NetworkManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E98315257D1E4B002BDFA6 /* NetworkManagerSpec.swift */; };
 		A4E9831C257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E9831B257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift */; };
 		A4E98325257D1F50002BDFA6 /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E98324257D1F50002BDFA6 /* NetworkServiceMock.swift */; };
@@ -92,6 +93,7 @@
 		A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesDesignSystem.swift; sourceTree = "<group>"; };
 		A4D53F8925712446003A244F /* TopStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		A4D53F8F2571249F003A244F /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
+		A4E210DF25824F65000C6D56 /* TopStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		A4E98315257D1E4B002BDFA6 /* NetworkManagerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerSpec.swift; sourceTree = "<group>"; };
 		A4E9831B257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceDataTaskMock.swift; sourceTree = "<group>"; };
 		A4E98324257D1F50002BDFA6 /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				A437BFAF2580F94A00C61E07 /* TopStoriesTableViewCellSpec.swift */,
+				A4E210DF25824F65000C6D56 /* TopStoriesViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A437BFB02580F94A00C61E07 /* TopStoriesTableViewCellSpec.swift in Sources */,
+				A4E210E025824F65000C6D56 /* TopStoriesViewController.swift in Sources */,
 				A4ABDE6325728A4C00197D10 /* HackRxNewsTests.swift in Sources */,
 				A4E98316257D1E4B002BDFA6 /* NetworkManagerSpec.swift in Sources */,
 				A4E9831C257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift in Sources */,

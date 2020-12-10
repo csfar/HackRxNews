@@ -24,7 +24,7 @@ final class TopStoryViewModel {
     private let itemObservable: Observable<ItemModel>
 
     /// The `ViewModel`'s item relay.
-    private let itemRelay: BehaviorRelay<ItemModel>
+    private let itemSubject: BehaviorSubject<ItemModel>
 
     /// The manager used for performing HTTP requests.
     private var networkManager: NetworkManager?
@@ -37,7 +37,7 @@ final class TopStoryViewModel {
          networkManager: NetworkManager?) {
         self.storyID = storyID
         self.disposeBag = DisposeBag()
-        self.itemRelay = BehaviorRelay(value: ItemModel(title: "Loading..."))
+        self.itemSubject = BehaviorSubject(value: ItemModel(title: "Loading..."))
 
         if let unwrappedNetworkManager = networkManager {
             self.networkManager = unwrappedNetworkManager
@@ -58,17 +58,17 @@ final class TopStoryViewModel {
     // MARK: - API
     /// The story's title.
     var title: Driver<String> {
-        return itemRelay.map { $0.title }
+        return itemSubject.map { $0.title }
             .asDriver(onErrorJustReturn: "Title")
     }
     /// The story's author.
     var author: Driver<String> {
-        return itemRelay.map { "by \($0.by)" }
+        return itemSubject.map { "by \($0.by)" }
             .asDriver(onErrorJustReturn: "Author")
     }
     /// The story's date of posting.
     var dateOfPosting: Driver<String> {
-        return itemRelay.map {
+        return itemSubject.map {
             let dateOfCreation = Date(timeIntervalSince1970: $0.time)
             let dateFormatter = RelativeDateTimeFormatter()
             dateFormatter.unitsStyle = .full
@@ -78,12 +78,12 @@ final class TopStoryViewModel {
     }
     /// The story's number of comments.
     var numberOfComments: Driver<String> {
-        return itemRelay.map { "\($0.descendants) comments" }
+        return itemSubject.map { "\($0.descendants) comments" }
             .asDriver(onErrorJustReturn: "Comments")
     }
     /// The story's number of points.
     var points: Driver<String> {
-        return itemRelay.map { "\($0.score)" }
+        return itemSubject.map { "\($0.score)" }
             .asDriver(onErrorJustReturn: "999")
     }
 
@@ -91,9 +91,10 @@ final class TopStoryViewModel {
     func fetch() {
         if !hasFetched {
 
-            itemObservable.subscribe { [weak self] (item) in
-                self?.itemRelay.accept(item)
-            }.disposed(by: disposeBag)
+            itemObservable
+                .map { $0 }
+                .bind(to: itemSubject)
+                .disposed(by: disposeBag)
 
             hasFetched = true
         }

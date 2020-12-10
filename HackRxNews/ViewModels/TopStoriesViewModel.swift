@@ -43,21 +43,14 @@ final class TopStoriesViewModel {
         self.networkManager.perform(request, for: [ItemID].self)
             .observe(on: MainScheduler.instance)
             .map { $0.map { [weak self] in TopStoryViewModel(storyID: $0, networkManager: self?.networkManager) } }
-            .subscribe { [weak self] (event) in
-                guard let self = self else {
-                    return
-                }
-
-                if let stories = event.element {
-                    self.viewModelsRelay.accept(stories)
-                }
-            }.disposed(by: disposeBag)
+            .bind(to: viewModelsRelay)
+            .disposed(by: disposeBag)
 
     }
 
     // MARK: - API
     /// The top stories.
     var stories: Driver<[TopStoryViewModel]> {
-        return viewModelsRelay.asDriver()
+        return viewModelsRelay.asDriver(onErrorJustReturn: [])
     }
 }

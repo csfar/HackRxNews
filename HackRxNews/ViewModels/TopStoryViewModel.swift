@@ -12,7 +12,7 @@ import RxCocoa
 final class TopStoryViewModel {
     // MARK: - Properties
     /// The story's ID.
-    private let storyID: ItemID
+    let storyID: ItemID
 
     /// Whether or not the `ViewModel` has fetched already.
     private var hasFetched: Bool = false

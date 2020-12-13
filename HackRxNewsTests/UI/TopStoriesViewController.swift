@@ -29,7 +29,7 @@ final class TopStoriesViewControllerSpec: QuickSpec {
 
                     sut = TopStoriesViewController(viewModel: viewModel)
 
-                    sut.view.frame.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    sut.view.frame = UIScreen.main.bounds
                 }
 
                 afterEach {

@@ -21,10 +21,10 @@ final class TopStoryViewModel {
     private let disposeBag: DisposeBag
 
     /// The `ItemModel` observable for requesting an item.
-    private let itemObservable: Observable<ItemModel>
+    private let itemObservable: Observable<Item>
 
     /// The `ViewModel`'s item relay.
-    private let itemSubject: BehaviorSubject<ItemModel>
+    private let itemSubject: BehaviorSubject<Item>
 
     /// The manager used for performing HTTP requests.
     private var networkManager: NetworkManager?
@@ -37,7 +37,7 @@ final class TopStoryViewModel {
          networkManager: NetworkManager?) {
         self.storyID = storyID
         self.disposeBag = DisposeBag()
-        self.itemSubject = BehaviorSubject(value: ItemModel(title: "Loading..."))
+        self.itemSubject = BehaviorSubject(value: Item(title: "Loading..."))
 
         if let unwrappedNetworkManager = networkManager {
             self.networkManager = unwrappedNetworkManager
@@ -48,7 +48,7 @@ final class TopStoryViewModel {
 
             let request = URLRequest(url: url)
 
-            self.itemObservable = unwrappedNetworkManager.perform(request, for: ItemModel.self)
+            self.itemObservable = unwrappedNetworkManager.perform(request, for: Item.self)
                 .observe(on: MainScheduler.instance)
         } else {
             self.itemObservable = Observable.empty()

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Representation of an item from the API.
-struct ItemModel: Decodable {
+struct Item: Decodable {
     /// The item's unique ID.
     let id: Int
 
@@ -87,8 +87,8 @@ struct ItemModel: Decodable {
     }
 }
 
-extension ItemModel: Equatable {
-    static func ==(lhs: ItemModel, rhs: ItemModel) -> Bool {
+extension Item: Equatable {
+    static func ==(lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id &&
             lhs.deleted == rhs.deleted &&
             lhs.type == rhs.type &&

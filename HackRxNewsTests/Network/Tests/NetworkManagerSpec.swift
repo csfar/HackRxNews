@@ -58,13 +58,13 @@ final class NetworkManagerSpec: QuickSpec {
 
                         service.json = stubJSONURL
 
-                        var item: ItemModel!
+                        var item: Item!
 
-                        sut.perform(urlRequest, for: ItemModel.self).subscribe { (_item) in
+                        sut.perform(urlRequest, for: Item.self).subscribe { (_item) in
                             item = _item
                         }.disposed(by: disposeBag)
 
-                        let decodedItem = try! JSONDecoder().decode(ItemModel.self, from: stubJSONData)
+                        let decodedItem = try! JSONDecoder().decode(Item.self, from: stubJSONData)
 
                         expect(item).to(equal(decodedItem))
                     }

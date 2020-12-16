@@ -40,19 +40,19 @@ struct Item: Decodable {
     let kids: [Int]?
 
     /// The item's URL
-    let url: String
+    let url: String?
 
     /// The item's score
-    let score: Int
+    let score: Int?
 
     /// The item's title.
-    let title: String
+    let title: String?
 
     /// ?
     let parts: [Int]?
 
     /// The total number of comments.
-    let descendants: Int
+    let descendants: Int?
 
     init(id: Int = 0,
          deleted: Bool = false,
@@ -88,7 +88,7 @@ struct Item: Decodable {
 }
 
 extension Item: Equatable {
-    static func ==(lhs: Item, rhs: Item) -> Bool {
+    static func == (lhs: Item, rhs: Item) -> Bool {
         return lhs.id == rhs.id &&
             lhs.deleted == rhs.deleted &&
             lhs.type == rhs.type &&

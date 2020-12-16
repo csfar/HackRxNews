@@ -52,7 +52,9 @@ final class TopStoriesViewController: UIViewController {
     /// Sets up the `storiesTableView`'s bindings.
     private func setUpTableViewBindings() {
         viewModel.stories
-            .drive(storiesTableView.rx.items(cellIdentifier: TopStoriesTableViewCell.identifier,
+            .drive(storiesTableView
+                    .rx
+                    .items(cellIdentifier: TopStoriesTableViewCell.identifier,
                                              cellType: TopStoriesTableViewCell.self)) { (_, viewModel, cell) in
                 cell.setUp(with: viewModel)
             }.disposed(by: disposeBag)

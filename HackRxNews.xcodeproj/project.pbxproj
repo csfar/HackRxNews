@@ -27,8 +27,6 @@
 		A4635A65257A743500A85EAD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A64257A743500A85EAD /* NetworkService.swift */; };
 		A4635A69257A749500A85EAD /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A68257A749500A85EAD /* NetworkServiceError.swift */; };
 		A4635A6D257A756200A85EAD /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A6C257A756200A85EAD /* URLSession+Extensions.swift */; };
-		A472E104258925FA00DBD56E /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472E103258925FA00DBD56E /* Story.swift */; };
-		A472E10A258934F500DBD56E /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A472E109258934F500DBD56E /* Comment.swift */; };
 		A47FD2092586A1A000479BC5 /* TopStoriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */; };
 		A48DEE74257292BB00899BB4 /* AutoLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */; };
 		A4ABDE392571B40900197D10 /* TopStoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE382571B40900197D10 /* TopStoriesTableViewCell.swift */; };
@@ -84,8 +82,6 @@
 		A4635A64257A743500A85EAD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A4635A68257A749500A85EAD /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		A4635A6C257A756200A85EAD /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
-		A472E103258925FA00DBD56E /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
-		A472E109258934F500DBD56E /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewModelSpec.swift; sourceTree = "<group>"; };
 		A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutTests.swift; sourceTree = "<group>"; };
 		A4ABDE382571B40900197D10 /* TopStoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -334,8 +330,6 @@
 			isa = PBXGroup;
 			children = (
 				A433D209257526CB00E15A4F /* Item.swift */,
-				A472E103258925FA00DBD56E /* Story.swift */,
-				A472E109258934F500DBD56E /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -603,7 +597,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4ABDE392571B40900197D10 /* TopStoriesTableViewCell.swift in Sources */,
-				A472E10A258934F500DBD56E /* Comment.swift in Sources */,
 				A4D53F8A25712446003A244F /* TopStoriesViewController.swift in Sources */,
 				A40F7980256EA26400B1011A /* AppDelegate.swift in Sources */,
 				A4D53F902571249F003A244F /* AutoLayout.swift in Sources */,
@@ -624,7 +617,6 @@
 				A4635A69257A749500A85EAD /* NetworkServiceError.swift in Sources */,
 				A4B01DB42572CAB90086A55C /* TopStoryViewModel.swift in Sources */,
 				A4ABDE502572824A00197D10 /* UIFont+Extensions.swift in Sources */,
-				A472E104258925FA00DBD56E /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

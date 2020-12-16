@@ -15,7 +15,7 @@ final class TopStoriesViewModel {
     private let networkManager: NetworkManager
 
     /// The `TopStoryViewModel` relay. Used by a `Driver` to drive the UI.
-    private let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
+    let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
 
     /// The Coordinator attatched to this ViewModel.
     private let coordinator: FeedCoordinator

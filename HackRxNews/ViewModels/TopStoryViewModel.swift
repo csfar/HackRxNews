@@ -24,7 +24,7 @@ final class TopStoryViewModel {
     private let itemObservable: Observable<Item>
 
     /// The `ViewModel`'s item relay.
-    private let itemSubject: BehaviorSubject<Item>
+    private let itemRelay: BehaviorRelay<Item>
 
     /// The manager used for performing HTTP requests.
     private var networkManager: NetworkManager?
@@ -37,7 +37,7 @@ final class TopStoryViewModel {
          networkManager: NetworkManager?) {
         self.storyID = storyID
         self.disposeBag = DisposeBag()
-        self.itemSubject = BehaviorSubject(value: Item(title: "Loading..."))
+        self.itemRelay = BehaviorRelay(value: Item(title: "-"))
 
         if let unwrappedNetworkManager = networkManager {
             self.networkManager = unwrappedNetworkManager
@@ -58,33 +58,33 @@ final class TopStoryViewModel {
     // MARK: - API
     /// The story's title.
     var title: Driver<String> {
-        return itemSubject.map { $0.title }
-            .asDriver(onErrorJustReturn: "Title")
+        return itemRelay.map { $0.title ?? "-" }
+            .asDriver(onErrorJustReturn: "-")
     }
     /// The story's author.
     var author: Driver<String> {
-        return itemSubject.map { "by \($0.by)" }
-            .asDriver(onErrorJustReturn: "Author")
+        return itemRelay.map { "by \($0.by)" }
+            .asDriver(onErrorJustReturn: "-")
     }
     /// The story's date of posting.
     var dateOfPosting: Driver<String> {
-        return itemSubject.map {
+        return itemRelay.map {
             let dateOfCreation = Date(timeIntervalSince1970: $0.time)
             let dateFormatter = RelativeDateTimeFormatter()
             dateFormatter.unitsStyle = .full
 
             return dateFormatter.localizedString(for: dateOfCreation, relativeTo: Date())
-        }.asDriver(onErrorJustReturn: "Date")
+        }.asDriver(onErrorJustReturn: "-")
     }
     /// The story's number of comments.
     var numberOfComments: Driver<String> {
-        return itemSubject.map { "\($0.descendants) comments" }
-            .asDriver(onErrorJustReturn: "Comments")
+        return itemRelay.map { "\($0.descendants ?? 0) comments" }
+            .asDriver(onErrorJustReturn: "-")
     }
     /// The story's number of points.
     var points: Driver<String> {
-        return itemSubject.map { "\($0.score)" }
-            .asDriver(onErrorJustReturn: "999")
+        return itemRelay.map { "\($0.score ?? 0)" }
+            .asDriver(onErrorJustReturn: "-")
     }
 
     /// Fetches the item's data.
@@ -93,7 +93,7 @@ final class TopStoryViewModel {
 
             itemObservable
                 .map { $0 }
-                .bind(to: itemSubject)
+                .bind(to: itemRelay)
                 .disposed(by: disposeBag)
 
             hasFetched = true

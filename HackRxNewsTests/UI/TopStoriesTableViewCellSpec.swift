@@ -19,10 +19,9 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
             context("with a story") {
                 beforeEach {
                     let bundle = Bundle(for: type(of: self))
-                    let jsonURL = bundle.url(forResource: "item-response", withExtension: "json")
                     service = NetworkServiceMock(bundle: bundle)
+                    let jsonURL = service.bundle.url(forResource: "item-response", withExtension: "json")
                     service.json = jsonURL
-
 
                     let networkManager = NetworkManager(service: service)
 
@@ -36,6 +35,7 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
 
                 afterEach {
                     sut = nil
+                    service = nil
                 }
 
                 it("should layout and display data correctly") {

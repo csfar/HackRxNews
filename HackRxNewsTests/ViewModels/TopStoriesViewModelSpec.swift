@@ -60,7 +60,7 @@ final class TopStoriesViewModelSpec: QuickSpec {
                     .flatMap { $0 }
 
 
-                expect(ids).toEventually(equal(expectedIDs), timeout: .seconds(1))
+                expect(ids).toEventually(equal(expectedIDs), timeout: .seconds(2))
             }
         }
     }

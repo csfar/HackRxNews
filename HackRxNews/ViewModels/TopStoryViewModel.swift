@@ -50,6 +50,7 @@ final class TopStoryViewModel {
 
             self.itemObservable = unwrappedNetworkManager.perform(request, for: Item.self)
                 .observe(on: MainScheduler.instance)
+                .asObservable()
         } else {
             self.itemObservable = Observable.empty()
         }

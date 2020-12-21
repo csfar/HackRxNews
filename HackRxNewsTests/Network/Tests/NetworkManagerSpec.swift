@@ -79,8 +79,11 @@ final class NetworkManagerSpec: QuickSpec {
                         var error: NetworkServiceError!
 
                         sut.perform(urlRequest, for: [ItemID].self).subscribe { event in
-                            if let _error = event.error {
+                            switch event {
+                            case .failure(let _error):
                                 error = (_error as! NetworkServiceError)
+                            case .success(_):
+                                error = nil
                             }
                         }.disposed(by: disposeBag)
 
@@ -95,8 +98,11 @@ final class NetworkManagerSpec: QuickSpec {
                         var error: NetworkServiceError!
 
                         sut.perform(urlRequest, for: [ItemID].self).subscribe { event in
-                            if let _error = event.error {
+                            switch event {
+                            case .failure(let _error):
                                 error = (_error as! NetworkServiceError)
+                            case .success(_):
+                                error = nil
                             }
                         }.disposed(by: disposeBag)
 
@@ -111,8 +117,11 @@ final class NetworkManagerSpec: QuickSpec {
                         var error: NetworkServiceError!
 
                         sut.perform(urlRequest, for: [ItemID].self).subscribe { event in
-                            if let _error = event.error {
+                            switch event {
+                            case .failure(let _error):
                                 error = (_error as! NetworkServiceError)
+                            case .success(_):
+                                error = nil
                             }
                         }.disposed(by: disposeBag)
 
@@ -129,8 +138,11 @@ final class NetworkManagerSpec: QuickSpec {
                         var error: NetworkServiceError!
 
                         sut.perform(urlRequest, for: [ItemID].self).subscribe { event in
-                            if let _error = event.error {
+                            switch event {
+                            case .failure(let _error):
                                 error = (_error as! NetworkServiceError)
+                            case .success(_):
+                                error = nil
                             }
                         }.disposed(by: disposeBag)
 

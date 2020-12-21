@@ -26,36 +26,34 @@ final class NetworkManager {
     /// - Parameter request: The `URLRequest` used in the request.
     /// - Parameter for: The type of `T`.
     /// - Returns: An `Observable` of type `T`.
-    func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Observable<T> {
-        return Observable.create { [weak self] observer in
+    func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Single<T> {
+        return Single.create { [weak self] single in
             let serviceTask = self?.service.dataTask(with: request, completionHandler: { (data, response, error) in
                 if error != nil && response == nil {
-                    observer.onError(NetworkServiceError.requestFailed)
+                    single(.failure(NetworkServiceError.requestFailed))
                 }
 
                 if let httpResponse = response as? HTTPURLResponse {
                     guard 200...299 ~= httpResponse.statusCode else {
-                        observer.onError(NetworkServiceError.unexpectedHTTPStatusCode)
+                        single(.failure(NetworkServiceError.unexpectedHTTPStatusCode))
                         return
                     }
 
                     guard let unwrappedData = data else {
-                        observer.onError(NetworkServiceError.missingData)
+                        single(.failure(NetworkServiceError.missingData))
                         return
                     }
 
                     do {
                         let decoded = try JSONDecoder().decode(T.self, from: unwrappedData)
-                        observer.onNext(decoded)
+                        single(.success(decoded))
                     } catch {
-                        observer.onError(NetworkServiceError.decodingFailed)
+                        single(.failure(NetworkServiceError.decodingFailed))
                     }
 
                 } else {
-                    observer.onError(NetworkServiceError.unexpectedResponseType)
+                    single(.failure(NetworkServiceError.unexpectedResponseType))
                 }
-                
-                observer.onCompleted()
             })
             serviceTask?.resume()
             

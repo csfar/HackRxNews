@@ -43,7 +43,6 @@ final class TopStoriesViewModel {
         self.networkManager.perform(request, for: [ItemID].self)
             .observe(on: MainScheduler.instance)
             .map { $0.map { [weak self] in TopStoryViewModel(storyID: $0, networkManager: self?.networkManager) } }
-            .asObservable()
             .bind(to: viewModelsRelay)
             .disposed(by: disposeBag)
 

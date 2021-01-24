@@ -236,12 +236,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		A48DEE77257292C300899BB4 /* UI */ = {
+		A48DEE77257292C300899BB4 /* Snapshots */ = {
 			isa = PBXGroup;
 			children = (
 				A437BFAF2580F94A00C61E07 /* TopStoriesTableViewCellSpec.swift */,
 			);
-			path = UI;
+			path = Snapshots;
 			sourceTree = "<group>";
 		};
 		A4923CB1257120E000B1D939 /* Application */ = {
@@ -297,7 +297,7 @@
 				A4E98314257D1E34002BDFA6 /* Network */,
 				A40998642577D14000B3CA45 /* Extensions */,
 				A42D944C2572942F004B1729 /* Property Wrappers */,
-				A48DEE77257292C300899BB4 /* UI */,
+				A48DEE77257292C300899BB4 /* Snapshots */,
 				A4ABDE6425728A4C00197D10 /* Info.plist */,
 			);
 			path = HackRxNewsTests;

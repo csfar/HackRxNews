@@ -26,33 +26,34 @@ final class NetworkManager {
     /// - Parameter request: The `URLRequest` used in the request.
     /// - Parameter for: The type of `T`.
     /// - Returns: An `Observable` of type `T`.
-    func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Single<T> {
-        return Single.create { [weak self] single in
+    func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Observable<T> {
+        return Observable.create { [weak self] observable in
             let serviceTask = self?.service.dataTask(with: request, completionHandler: { (data, response, error) in
                 if error != nil && response == nil {
-                    single(.failure(NetworkServiceError.requestFailed))
+                    observable.onError(NetworkServiceError.requestFailed)
                 }
 
                 if let httpResponse = response as? HTTPURLResponse {
                     guard 200...299 ~= httpResponse.statusCode else {
-                        single(.failure(NetworkServiceError.unexpectedHTTPStatusCode))
+                        observable.onError(NetworkServiceError.unexpectedHTTPStatusCode)
                         return
                     }
 
                     guard let unwrappedData = data else {
-                        single(.failure(NetworkServiceError.missingData))
+                        observable.onError(NetworkServiceError.missingData)
                         return
                     }
 
                     do {
                         let decoded = try JSONDecoder().decode(T.self, from: unwrappedData)
-                        single(.success(decoded))
+                        observable.onNext(decoded)
+                        observable.onCompleted()
                     } catch {
-                        single(.failure(NetworkServiceError.decodingFailed))
+                        observable.onError(NetworkServiceError.decodingFailed)
                     }
 
                 } else {
-                    single(.failure(NetworkServiceError.unexpectedResponseType))
+                    observable.onError(NetworkServiceError.unexpectedResponseType)
                 }
             })
             serviceTask?.resume()

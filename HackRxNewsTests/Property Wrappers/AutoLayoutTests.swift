@@ -19,6 +19,6 @@ final class AutoLayoutTests: XCTestCase {
 
     func test_Frame_asZero() {
         let view = sut
-        expect(view.frame).to(equal(CGRect(x: 0, y: 0, width: 0, height: 0)))
+        expect(view.frame).to(equal(CGRect.zero))
     }
 }

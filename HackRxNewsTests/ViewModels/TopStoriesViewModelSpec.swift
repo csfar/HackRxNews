@@ -8,16 +8,18 @@
 import Quick
 import Nimble
 import RxTest
+import RxBlocking
 import RxSwift
 @testable import HackRxNews
 
 final class TopStoriesViewModelSpec: QuickSpec {
     override func spec() {
+        var sut: TopStoriesViewModel!
+        var service: NetworkServiceMock!
+        var networkManager: NetworkManager!
+        var scheduler: ConcurrentDispatchQueueScheduler!
+
         describe("when initialized") {
-            var sut: TopStoriesViewModel!
-            var service: NetworkServiceMock!
-            var scheduler: TestScheduler!
-            var disposeBag: DisposeBag!
 
             beforeEach {
                 let bundle = Bundle(for: type(of: self))
@@ -25,11 +27,10 @@ final class TopStoriesViewModelSpec: QuickSpec {
                 service = NetworkServiceMock(bundle: bundle)
                 service.json = jsonURL
 
-                scheduler = TestScheduler(initialClock: 0)
-                disposeBag = DisposeBag()
+                scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
                 let navigationController = UINavigationController()
-                let networkManager = NetworkManager(service: service)
+                networkManager = NetworkManager(service: service)
                 let coordinator = FeedCoordinator(navigationController: navigationController, networkManager: networkManager)
                 sut = TopStoriesViewModel(networkManager: networkManager, coordinator: coordinator)
             }
@@ -38,29 +39,20 @@ final class TopStoriesViewModelSpec: QuickSpec {
                 sut = nil
                 service = nil
                 scheduler = nil
-                disposeBag = nil
             }
 
             it("should have a driver of viewmodels") {
-                let stories = scheduler.createObserver([TopStoryViewModel].self)
 
-                sut.stories
-                    .drive(stories)
-                    .disposed(by: disposeBag)
+                let sutObservable = sut.stories.asObservable().subscribe(on: scheduler)
 
 
                 let data = try! Data(contentsOf: service.json!)
-                let expectedIDs = try! JSONDecoder().decode([ItemID].self, from: data)
+                let ids = try! JSONDecoder().decode([ItemID].self, from: data)
+                let expectedViewModels = ids.map { TopStoryViewModel(storyID: $0, networkManager: networkManager) }
 
-                let ids = stories.events
-                    .map { $0.value.map {
-                        $0.map {
-                            $0.storyID } } }
-                    .compactMap { $0.event.element }
-                    .flatMap { $0 }
+                let sutViewModels = try! sutObservable.toBlocking(timeout: 1.0).first()!
 
-
-                expect(ids).to(equal(expectedIDs))
+                expect(expectedViewModels.first!.storyID).to(equal(sutViewModels.first!.storyID))
             }
         }
     }

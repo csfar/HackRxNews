@@ -34,26 +34,21 @@ final class TopStoryViewModel {
     /// - Parameter storyID: The story's ID.
     /// - Parameter networkManager: The manager used for performing HTTP requests.
     init(storyID: ItemID,
-         networkManager: NetworkManager?) {
+         networkManager: NetworkManager = NetworkManager()) {
         self.storyID = storyID
         self.disposeBag = DisposeBag()
         self.itemRelay = BehaviorRelay(value: Item(title: "-"))
+        self.networkManager = networkManager
 
-        if let unwrappedNetworkManager = networkManager {
-            self.networkManager = unwrappedNetworkManager
-
-            guard let url = Endpoint.item(storyID).url else {
-                preconditionFailure("Failed to get URL from Endpoint")
-            }
-
-            let request = URLRequest(url: url)
-
-            self.itemObservable = unwrappedNetworkManager.perform(request, for: Item.self)
-                .observe(on: MainScheduler.instance)
-                .asObservable()
-        } else {
-            self.itemObservable = Observable.empty()
+        guard let url = Endpoint.item(storyID).url else {
+            preconditionFailure("Failed to get URL from Endpoint")
         }
+
+        let request = URLRequest(url: url)
+
+        self.itemObservable = networkManager.perform(request, for: Item.self)
+            .observe(on: MainScheduler.instance)
+            .asObservable()
     }
 
     // MARK: - API

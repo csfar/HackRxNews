@@ -15,7 +15,7 @@ final class TopStoriesViewModel {
     private let networkManager: NetworkManager
 
     /// The `TopStoryViewModel` relay. Used by a `Driver` to drive the UI.
-    let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
+    private let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
 
     /// The Coordinator attatched to this ViewModel.
     private let coordinator: FeedCoordinator
@@ -41,8 +41,8 @@ final class TopStoriesViewModel {
         let request = URLRequest(url: endpoint)
 
         self.networkManager.perform(request, for: [ItemID].self)
+            .map { $0.map { TopStoryViewModel(storyID: $0) } }
             .observe(on: MainScheduler.instance)
-            .map { $0.map { [weak self] in TopStoryViewModel(storyID: $0, networkManager: self?.networkManager) } }
             .bind(to: viewModelsRelay)
             .disposed(by: disposeBag)
 

@@ -19,8 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
 
         let navigationController = UINavigationController()
-        let networkManager = NetworkManager()
-        let coordinator = FeedCoordinator(navigationController: navigationController, networkManager: networkManager)
+        let coordinator = FeedCoordinator(navigationController: navigationController)
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

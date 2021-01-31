@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// The service responsible for performing network requests.
+/// A service responsible for performing network requests.
 protocol NetworkService {
     func dataTask(with: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
 }

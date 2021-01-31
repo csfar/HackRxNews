@@ -16,7 +16,7 @@ final class TopStoriesViewModelSpec: QuickSpec {
     override func spec() {
         var sut: TopStoriesViewModel!
         var service: NetworkServiceMock!
-        var networkManager: NetworkManager!
+        var networkManager: NetworkManagerProtocol!
         var scheduler: ConcurrentDispatchQueueScheduler!
 
         describe("when initialized") {
@@ -31,7 +31,7 @@ final class TopStoriesViewModelSpec: QuickSpec {
 
                 let navigationController = UINavigationController()
                 networkManager = NetworkManager(service: service)
-                let coordinator = FeedCoordinator(navigationController: navigationController, networkManager: networkManager)
+                let coordinator = FeedCoordinator(navigationController: navigationController)
                 sut = TopStoriesViewModel(networkManager: networkManager, coordinator: coordinator)
             }
 

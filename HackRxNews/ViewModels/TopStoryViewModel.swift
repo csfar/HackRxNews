@@ -27,14 +27,14 @@ final class TopStoryViewModel {
     private let itemRelay: BehaviorRelay<Item>
 
     /// The manager used for performing HTTP requests.
-    private var networkManager: NetworkManager?
+    private var networkManager: NetworkManagerProtocol?
 
     // MARK: - Init
     /// Initializes a new instance of this type.
     /// - Parameter storyID: The story's ID.
     /// - Parameter networkManager: The manager used for performing HTTP requests.
     init(storyID: ItemID,
-         networkManager: NetworkManager = NetworkManager()) {
+         networkManager: NetworkManagerProtocol = NetworkManager()) {
         self.storyID = storyID
         self.disposeBag = DisposeBag()
         self.itemRelay = BehaviorRelay(value: Item(title: "-"))

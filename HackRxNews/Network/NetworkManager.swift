@@ -9,7 +9,7 @@ import RxSwift
 
 /// Responsible for managing network requests.
 /// Stubbing `NetworkService` is suggested when testing.
-final class NetworkManager {
+struct NetworkManager: NetworkManagerProtocol {
 
     //- MARK: Properties
     /// The service responsible for performing the requests.
@@ -27,8 +27,8 @@ final class NetworkManager {
     /// - Parameter for: The type of `T`.
     /// - Returns: An `Observable` of type `T`.
     func perform<T: Decodable>(_ request: URLRequest, for type: T.Type) -> Observable<T> {
-        return Observable.create { [weak self] observable in
-            let serviceTask = self?.service.dataTask(with: request, completionHandler: { (data, response, error) in
+        return Observable.create { observable in
+            let serviceTask = service.dataTask(with: request, completionHandler: { (data, response, error) in
                 if error != nil && response == nil {
                     observable.onError(NetworkServiceError.requestFailed)
                 }
@@ -56,10 +56,10 @@ final class NetworkManager {
                     observable.onError(NetworkServiceError.unexpectedResponseType)
                 }
             })
-            serviceTask?.resume()
+            serviceTask.resume()
             
             return Disposables.create {
-                serviceTask?.cancel()
+                serviceTask.cancel()
             }
         }
     }

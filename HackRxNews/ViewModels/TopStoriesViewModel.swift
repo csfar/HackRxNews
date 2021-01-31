@@ -12,7 +12,7 @@ import RxCocoa
 final class TopStoriesViewModel {
     // MARK: - Properties
     /// The manager used for performing HTTP requests.
-    private let networkManager: NetworkManager
+    private let networkManager: NetworkManagerProtocol
 
     /// The `TopStoryViewModel` relay. Used by a `Driver` to drive the UI.
     private let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
@@ -27,7 +27,7 @@ final class TopStoriesViewModel {
     /// Initializes a new instance of this type.
     /// - Parameter networkManager: The manager used for performing HTTP requests.
     /// - Parameter coordinator: The Coordinator attatched to this ViewModel.
-    init(networkManager: NetworkManager,
+    init(networkManager: NetworkManagerProtocol = NetworkManager(),
          coordinator: FeedCoordinator) {
         self.coordinator = coordinator
         self.networkManager = networkManager

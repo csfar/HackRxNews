@@ -19,12 +19,12 @@ final class TopStoriesViewController: UIViewController {
     private let disposeBag: DisposeBag = DisposeBag()
 
     /// The `ViewModel` for this `View`.
-    private let viewModel: TopStoriesViewModel
+    private let viewModel: TopStoriesViewModelProtocol
 
     // MARK: - Init
     /// Initializes a new instance of this type.
     /// - Parameter viewModel: The `ViewModel` responsible for this `View`.
-    init(viewModel: TopStoriesViewModel) {
+    init(viewModel: TopStoriesViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

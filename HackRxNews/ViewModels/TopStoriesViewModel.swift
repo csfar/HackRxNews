@@ -8,8 +8,13 @@
 import RxSwift
 import RxCocoa
 
+/// A representation of a `TopStoriesViewModel`.
+protocol TopStoriesViewModelProtocol {
+    var stories: Driver<[TopStoryViewModel]> { get }
+}
+
 /// `ViewModel` for `Top Stories`.
-final class TopStoriesViewModel {
+final class TopStoriesViewModel: TopStoriesViewModelProtocol {
     // MARK: - Properties
     /// The manager used for performing HTTP requests.
     private let networkManager: NetworkManagerProtocol

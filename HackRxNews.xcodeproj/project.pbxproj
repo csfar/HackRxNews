@@ -12,6 +12,8 @@
 		A40998702577D49800B3CA45 /* TopStoriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A409986F2577D49800B3CA45 /* TopStoriesTableView.swift */; };
 		A40B082D25C735AC001E286C /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B082C25C735AC001E286C /* NetworkManagerProtocol.swift */; };
 		A40B083125C73911001E286C /* TopStoriesTableViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B083025C73911001E286C /* TopStoriesTableViewSpec.swift */; };
+		A40B083625CF30C1001E286C /* TopStoriesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B083525CF30C1001E286C /* TopStoriesViewControllerSpec.swift */; };
+		A40B084025CF3307001E286C /* TopStoriesViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40B083F25CF3307001E286C /* TopStoriesViewModelMock.swift */; };
 		A40F7980256EA26400B1011A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F797F256EA26400B1011A /* AppDelegate.swift */; };
 		A40F7982256EA26400B1011A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40F7981256EA26400B1011A /* SceneDelegate.swift */; };
 		A40F7989256EA26600B1011A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40F7988256EA26600B1011A /* Assets.xcassets */; };
@@ -65,6 +67,8 @@
 		A409986F2577D49800B3CA45 /* TopStoriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTableView.swift; sourceTree = "<group>"; };
 		A40B082C25C735AC001E286C /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		A40B083025C73911001E286C /* TopStoriesTableViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTableViewSpec.swift; sourceTree = "<group>"; };
+		A40B083525CF30C1001E286C /* TopStoriesViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewControllerSpec.swift; sourceTree = "<group>"; };
+		A40B083F25CF3307001E286C /* TopStoriesViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewModelMock.swift; sourceTree = "<group>"; };
 		A40F797C256EA26400B1011A /* HackRxNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackRxNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40F797F256EA26400B1011A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A40F7981256EA26400B1011A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,22 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A40B083425CF30AB001E286C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A40B083525CF30C1001E286C /* TopStoriesViewControllerSpec.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A40B083E25CF32FB001E286C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A40B083F25CF3307001E286C /* TopStoriesViewModelMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		A40F7973256EA26400B1011A = {
@@ -236,6 +256,7 @@
 		A47FD2072586A18C00479BC5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A40B083E25CF32FB001E286C /* Mocks */,
 				A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */,
 			);
 			path = ViewModels;
@@ -299,6 +320,7 @@
 		A4ABDE6125728A4C00197D10 /* HackRxNewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				A40B083425CF30AB001E286C /* ViewControllers */,
 				A47FD2072586A18C00479BC5 /* ViewModels */,
 				A4E98314257D1E34002BDFA6 /* Network */,
 				A40998642577D14000B3CA45 /* Extensions */,
@@ -625,10 +647,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40B084025CF3307001E286C /* TopStoriesViewModelMock.swift in Sources */,
 				A437BFB02580F94A00C61E07 /* TopStoriesTableViewCellSpec.swift in Sources */,
 				A40B083125C73911001E286C /* TopStoriesTableViewSpec.swift in Sources */,
 				A47FD2092586A1A000479BC5 /* TopStoriesViewModelSpec.swift in Sources */,
 				A4E98316257D1E4B002BDFA6 /* NetworkManagerSpec.swift in Sources */,
+				A40B083625CF30C1001E286C /* TopStoriesViewControllerSpec.swift in Sources */,
 				A4E9831C257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift in Sources */,
 				A4E98325257D1F50002BDFA6 /* NetworkServiceMock.swift in Sources */,
 				A48DEE74257292BB00899BB4 /* AutoLayoutTests.swift in Sources */,

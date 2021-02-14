@@ -1,8 +1,8 @@
 //
-//  TopStoriesTableViewCellSpec.swift
+//  StoryDetailViewSpec.swift
 //  HackRxNewsTests
 //
-//  Created by Artur Carneiro on 09/12/20.
+//  Created by Artur Carneiro on 14/02/21.
 //
 
 import Quick
@@ -11,10 +11,10 @@ import Nimble_Snapshots
 
 @testable import HackRxNews
 
-final class TopStoriesTableViewCellSpec: QuickSpec {
+final class StoryDetailViewSpec: QuickSpec {
     override func spec() {
         describe("when initialized") {
-            var sut: TopStoriesTableViewCell!
+            var sut: StoryDetailView!
             var service: NetworkServiceMock!
             context("with a story") {
                 beforeEach {
@@ -27,10 +27,10 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
 
                     let topStoryViewModel = TopStoryViewModel(storyID: 1006, networkManager: networkManager)
 
-                    sut = TopStoriesTableViewCell()
-
+                    sut = StoryDetailView(frame: .zero)
                     sut.setUp(with: topStoryViewModel)
-                    sut.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 125)
+
+                    sut.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 100)
                 }
 
                 afterEach {
@@ -39,7 +39,7 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
                 }
 
                 it("should layout and display data correctly") {
-                    expect(sut).toEventually(haveValidSnapshot(named:"hackrx_top_stories_cell"), timeout: .seconds(1))
+                    expect(sut).toEventually(haveValidSnapshot(named:"hackrx_story_detail_view"), timeout: .seconds(1))
                 }
             }
         }

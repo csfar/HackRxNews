@@ -28,15 +28,15 @@ final class TopStoriesTableViewSpec: QuickSpec {
 
                     let networkManager = NetworkManager(service: service)
 
-                    let viewModels = [TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 8863, networkManager: networkManager)]
+                    let viewModels = [TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager)]
 
                     let relay = BehaviorRelay<[TopStoryViewModel]>(value: viewModels)
 

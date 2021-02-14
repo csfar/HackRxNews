@@ -37,15 +37,15 @@ final class TopStoriesViewControllerSpec: QuickSpec {
 
         describe("when initialized") {
             it("should set up bindings") {
-                let viewModels = [TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 8863, networkManager: networkManager)]
+                let viewModels = [TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
+                               TopStoryViewModel(storyID: 1006, networkManager: networkManager)]
 
                 viewModel.relay.accept(viewModels)
 

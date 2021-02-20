@@ -12,8 +12,6 @@ import RxCocoa
 /// Representation of a story's details.
 final class StoryDetailView: UIView {
     // MARK: - Properties
-    /// The header stack.
-    @HackRxStackViewWrapper(style: .header) private var headerStackView: HackRxStackView
     /// The story's title.
     @HackRxLabelWrapper(style: .title) private var titleLabel: HackRxLabel
     /// The story's author.
@@ -27,9 +25,6 @@ final class StoryDetailView: UIView {
     @HackRxLabelWrapper(style: .date) private var dateLabel: HackRxLabel
     /// The story's number of comments.
     @HackRxLabelWrapper(style: .comments) private var commentsLabel: HackRxLabel
-
-    /// The main stack.
-    @HackRxStackViewWrapper(style: .default) private var mainStackView: HackRxStackView
 
     private var disposeBag: DisposeBag?
 
@@ -68,7 +63,6 @@ final class StoryDetailView: UIView {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        mainStackView.axis = .vertical
         setUp()
     }
 
@@ -90,27 +84,53 @@ final class StoryDetailView: UIView {
     }
 
     private func addViews() {
-        headerStackView.addArrangedSubview(titleLabel)
-        headerStackView.addArrangedSubview(authorLabel)
+        addSubview(titleLabel)
+        addSubview(authorLabel)
 
         detailsStackView.addArrangedSubview(pointsLabel)
         detailsStackView.addArrangedSubview(dateLabel)
         detailsStackView.addArrangedSubview(commentsLabel)
 
-        mainStackView.addArrangedSubview(headerStackView)
-        mainStackView.addArrangedSubview(detailsStackView)
-
-        addSubview(mainStackView)
+        addSubview(detailsStackView)
     }
 
+    /// Bundles all views' `layoutConstraints` function.
     private func layoutConstraints() {
+        layoutTitleLabelConstraints()
+        layoutAuthorLabelConstraints()
+        layoutDetailsStackViewConstraints()
+    }
+
+    private func layoutTitleLabelConstraints() {
         let guides = self.layoutMarginsGuide
 
         NSLayoutConstraint.activate([
-            mainStackView.centerYAnchor.constraint(equalTo: guides.centerYAnchor),
-            mainStackView.centerXAnchor.constraint(equalTo: guides.centerXAnchor),
-            mainStackView.heightAnchor.constraint(equalTo: guides.heightAnchor),
-            mainStackView.widthAnchor.constraint(equalTo: guides.widthAnchor)
+            titleLabel.topAnchor.constraint(equalTo: guides.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
+        ])
+    }
+
+    private func layoutAuthorLabelConstraints() {
+        let guides = self.layoutMarginsGuide
+
+        NSLayoutConstraint.activate([
+            authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
+                                             constant: StoryDetailScreenDesignSystem.View.defaultSpacing),
+            authorLabel.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
+            authorLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
+        ])
+    }
+
+    private func layoutDetailsStackViewConstraints() {
+        let guides = self.layoutMarginsGuide
+
+        NSLayoutConstraint.activate([
+            detailsStackView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor,
+                                           constant: StoryDetailScreenDesignSystem.View.defaultSpacing),
+            detailsStackView.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
+            detailsStackView.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
+            detailsStackView.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
         ])
     }
 }

@@ -41,7 +41,7 @@ final class TopStoriesViewModelSpec: QuickSpec {
                 scheduler = nil
             }
 
-            it("should have a driver of viewmodels") {
+            it("should have a driver of fetched viewmodels") {
 
                 let sutObservable = sut.stories.asObservable().subscribe(on: scheduler)
 

@@ -8,8 +8,18 @@
 import RxSwift
 import RxCocoa
 
+/// A representation of a `TopStoryViewModel`.
+protocol TopStoryViewModelProtocol {
+    var title: Driver<String> { get }
+    var author: Driver<String> { get }
+    var dateOfPosting: Driver<String> { get }
+    var numberOfComments: Driver<String> { get }
+    var points: Driver<String> { get }
+    func fetch()
+}
+
 /// `ViewModel` for a `Top Story`.
-final class TopStoryViewModel {
+final class TopStoryViewModel: TopStoryViewModelProtocol {
     // MARK: - Properties
     /// The story's ID.
     let storyID: ItemID

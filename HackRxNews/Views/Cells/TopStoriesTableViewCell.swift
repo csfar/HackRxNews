@@ -27,7 +27,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
     private var disposeBag: DisposeBag?
 
     /// The `ViewModel`for this `View`.
-    private var viewModel: TopStoryViewModel? {
+    private var viewModel: TopStoryViewModelProtocol? {
         didSet {
             guard let viewModel = viewModel else {
                 return
@@ -89,7 +89,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
 
     // MARK: - API
     /// Sets up the `ViewModel`.
-    func setUp(with viewModel: TopStoryViewModel) {
+    func setUp(with viewModel: TopStoryViewModelProtocol) {
         self.viewModel = viewModel
         viewModel.fetch()
     }

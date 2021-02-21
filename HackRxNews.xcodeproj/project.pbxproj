@@ -28,6 +28,7 @@
 		A43BFF45257FE07500612BE1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF44257FE07500612BE1 /* Coordinator.swift */; };
 		A43BFF4B257FE10900612BE1 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */; };
 		A43D767025E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D766F25E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift */; };
+		A43D767425E2EBB1001A0708 /* TopStoryViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */; };
 		A43F28EE25D9C13400BD40DB /* StoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28ED25D9C13400BD40DB /* StoryDetailView.swift */; };
 		A43F28F225D9C3B500BD40DB /* HackRxStackViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28F125D9C3B500BD40DB /* HackRxStackViewWrapper.swift */; };
 		A43F28F625D9C41300BD40DB /* HackRxStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28F525D9C41300BD40DB /* HackRxStackView.swift */; };
@@ -90,6 +91,7 @@
 		A43BFF44257FE07500612BE1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		A43D766F25E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailScreenDesignSystem.swift; sourceTree = "<group>"; };
+		A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryViewModelSpec.swift; sourceTree = "<group>"; };
 		A43F28ED25D9C13400BD40DB /* StoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailView.swift; sourceTree = "<group>"; };
 		A43F28F125D9C3B500BD40DB /* HackRxStackViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxStackViewWrapper.swift; sourceTree = "<group>"; };
 		A43F28F525D9C41300BD40DB /* HackRxStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxStackView.swift; sourceTree = "<group>"; };
@@ -277,6 +279,7 @@
 			children = (
 				A40B083E25CF32FB001E286C /* Mocks */,
 				A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */,
+				A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -679,6 +682,7 @@
 				A433D40125D9CAF7006B3743 /* StoryDetailViewSpec.swift in Sources */,
 				A40B083125C73911001E286C /* TopStoriesTableViewSpec.swift in Sources */,
 				A47FD2092586A1A000479BC5 /* TopStoriesViewModelSpec.swift in Sources */,
+				A43D767425E2EBB1001A0708 /* TopStoryViewModelSpec.swift in Sources */,
 				A4E98316257D1E4B002BDFA6 /* NetworkManagerSpec.swift in Sources */,
 				A40B083625CF30C1001E286C /* TopStoriesViewControllerSpec.swift in Sources */,
 				A4E9831C257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift in Sources */,

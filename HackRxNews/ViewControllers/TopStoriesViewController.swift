@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 
 /// Representation of the `Top Stories` section.
-final class TopStoriesViewController: UIViewController {
+final class TopStoriesViewController: UIViewController, UITableViewDelegate {
     // MARK: - Properties
     /// The `UITableView` used to display the stories.
     @AutoLayout private var storiesTableView: TopStoriesTableView
@@ -58,5 +58,12 @@ final class TopStoriesViewController: UIViewController {
                                              cellType: TopStoriesTableViewCell.self)) { (_, viewModel, cell) in
                 cell.setUp(with: viewModel)
             }.disposed(by: disposeBag)
+
+        storiesTableView
+            .rx
+            .modelSelected(StoryViewModel.self)
+            .subscribe(onNext: { [weak self] (story) in
+                self?.viewModel.didSelect(story: story)
+            }).disposed(by: disposeBag)
     }
 }

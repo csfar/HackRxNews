@@ -10,14 +10,20 @@ import RxCocoa
 
 @testable import HackRxNews
 
-final class TopStorieSViewModelMock: TopStoriesViewModelProtocol {
-
-    var relay: BehaviorRelay<[TopStoryViewModel]> = BehaviorRelay<[TopStoryViewModel]>(value: [])
+final class TopStoriesViewModelMock: TopStoriesViewModelProtocol {
+    var relay: BehaviorRelay<[StoryViewModelProtocol]> = BehaviorRelay<[StoryViewModelProtocol]>(value: [])
 
     private(set) var didSetBinding: Bool = false
+    private(set) var selectedViewModel: StoryViewModelProtocol?
 
-    var stories: Driver<[TopStoryViewModel]> {
+    var stories: Driver<[StoryViewModelProtocol]> {
         didSetBinding = true
         return relay.asDriver(onErrorJustReturn: [])
     }
+
+    func didSelect(story viewModel: StoryViewModelProtocol) {
+        selectedViewModel = viewModel
+    }
+
+
 }

@@ -1,5 +1,5 @@
 //
-//  TopStoryViewModel.swift
+//  StoryViewModel.swift
 //  HackRxNews
 //
 //  Created by Artur Carneiro on 28/11/20.
@@ -8,8 +8,9 @@
 import RxSwift
 import RxCocoa
 
-/// A representation of a `TopStoryViewModel`.
-protocol TopStoryViewModelProtocol {
+/// A representation of a `StoryViewModel`.
+protocol StoryViewModelProtocol {
+    var storyID: ItemID { get }
     var title: Driver<String> { get }
     var author: Driver<String> { get }
     var dateOfPosting: Driver<String> { get }
@@ -18,8 +19,8 @@ protocol TopStoryViewModelProtocol {
     func fetch()
 }
 
-/// `ViewModel` for a `Top Story`.
-final class TopStoryViewModel: TopStoryViewModelProtocol {
+/// `ViewModel` for a `Story`.
+final class StoryViewModel: StoryViewModelProtocol {
     // MARK: - Properties
     /// The story's ID.
     let storyID: ItemID

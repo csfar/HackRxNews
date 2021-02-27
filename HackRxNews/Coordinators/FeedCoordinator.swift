@@ -26,4 +26,11 @@ final class FeedCoordinator: Coordinator {
 
         navigationController.pushViewController(viewController, animated: true)
     }
+
+    /// Navigates to a story's detail screen.
+    func didSelect(story viewModel: StoryViewModelProtocol) {
+        let viewController = StoryDetailViewController(storyViewModel: viewModel)
+
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }

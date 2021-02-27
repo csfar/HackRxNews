@@ -29,6 +29,7 @@
 		A43BFF4B257FE10900612BE1 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */; };
 		A43D767025E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D766F25E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift */; };
 		A43D767425E2EBB1001A0708 /* TopStoryViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */; };
+		A43D767825EAD529001A0708 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D767725EAD529001A0708 /* StoryDetailViewController.swift */; };
 		A43F28EE25D9C13400BD40DB /* StoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28ED25D9C13400BD40DB /* StoryDetailView.swift */; };
 		A43F28F225D9C3B500BD40DB /* HackRxStackViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28F125D9C3B500BD40DB /* HackRxStackViewWrapper.swift */; };
 		A43F28F625D9C41300BD40DB /* HackRxStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28F525D9C41300BD40DB /* HackRxStackView.swift */; };
@@ -43,7 +44,7 @@
 		A4ABDE49257280AA00197D10 /* HackRxLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE48257280AA00197D10 /* HackRxLabel.swift */; };
 		A4ABDE502572824A00197D10 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE4F2572824A00197D10 /* UIFont+Extensions.swift */; };
 		A4B01DAF2572C5AB0086A55C /* HackRxLabelWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DAE2572C5AB0086A55C /* HackRxLabelWrapper.swift */; };
-		A4B01DB42572CAB90086A55C /* TopStoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DB32572CAB90086A55C /* TopStoryViewModel.swift */; };
+		A4B01DB42572CAB90086A55C /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DB32572CAB90086A55C /* StoryViewModel.swift */; };
 		A4B01DC72572E96A0086A55C /* TopStoriesDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */; };
 		A4D53F8A25712446003A244F /* TopStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D53F8925712446003A244F /* TopStoriesViewController.swift */; };
 		A4D53F902571249F003A244F /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D53F8F2571249F003A244F /* AutoLayout.swift */; };
@@ -92,6 +93,7 @@
 		A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		A43D766F25E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailScreenDesignSystem.swift; sourceTree = "<group>"; };
 		A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryViewModelSpec.swift; sourceTree = "<group>"; };
+		A43D767725EAD529001A0708 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		A43F28ED25D9C13400BD40DB /* StoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailView.swift; sourceTree = "<group>"; };
 		A43F28F125D9C3B500BD40DB /* HackRxStackViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxStackViewWrapper.swift; sourceTree = "<group>"; };
 		A43F28F525D9C41300BD40DB /* HackRxStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxStackView.swift; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		A4ABDE6025728A4C00197D10 /* HackRxNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HackRxNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4ABDE6425728A4C00197D10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A4B01DAE2572C5AB0086A55C /* HackRxLabelWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxLabelWrapper.swift; sourceTree = "<group>"; };
-		A4B01DB32572CAB90086A55C /* TopStoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryViewModel.swift; sourceTree = "<group>"; };
+		A4B01DB32572CAB90086A55C /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
 		A4B01DC62572E96A0086A55C /* TopStoriesDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesDesignSystem.swift; sourceTree = "<group>"; };
 		A4D53F8925712446003A244F /* TopStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewController.swift; sourceTree = "<group>"; };
 		A4D53F8F2571249F003A244F /* AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayout.swift; sourceTree = "<group>"; };
@@ -359,7 +361,7 @@
 			isa = PBXGroup;
 			children = (
 				A433D2032575243400E15A4F /* TopStoriesViewModel.swift */,
-				A4B01DB32572CAB90086A55C /* TopStoryViewModel.swift */,
+				A4B01DB32572CAB90086A55C /* StoryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				A4D53F8925712446003A244F /* TopStoriesViewController.swift */,
+				A43D767725EAD529001A0708 /* StoryDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -645,6 +648,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40B082D25C735AC001E286C /* NetworkManagerProtocol.swift in Sources */,
+				A43D767825EAD529001A0708 /* StoryDetailViewController.swift in Sources */,
 				A4ABDE392571B40900197D10 /* TopStoriesTableViewCell.swift in Sources */,
 				A43F28F225D9C3B500BD40DB /* HackRxStackViewWrapper.swift in Sources */,
 				A4D53F8A25712446003A244F /* TopStoriesViewController.swift in Sources */,
@@ -667,7 +671,7 @@
 				A4635A5A257A6BB200A85EAD /* ItemID.swift in Sources */,
 				A4635A61257A736000A85EAD /* NetworkManager.swift in Sources */,
 				A4635A69257A749500A85EAD /* NetworkServiceError.swift in Sources */,
-				A4B01DB42572CAB90086A55C /* TopStoryViewModel.swift in Sources */,
+				A4B01DB42572CAB90086A55C /* StoryViewModel.swift in Sources */,
 				A43F28EE25D9C13400BD40DB /* StoryDetailView.swift in Sources */,
 				A4ABDE502572824A00197D10 /* UIFont+Extensions.swift in Sources */,
 			);

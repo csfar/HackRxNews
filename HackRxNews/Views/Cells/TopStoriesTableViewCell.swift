@@ -27,7 +27,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
     private var disposeBag: DisposeBag?
 
     /// The `ViewModel`for this `View`.
-    private var viewModel: TopStoryViewModelProtocol? {
+    private var viewModel: StoryViewModelProtocol? {
         didSet {
             guard let viewModel = viewModel else {
                 return
@@ -73,6 +73,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
         contentView.backgroundColor = .white
         backgroundColor = .white
         accessoryType = .disclosureIndicator
+        selectionStyle = .none
     }
 
     required init?(coder: NSCoder) {
@@ -89,7 +90,7 @@ final class TopStoriesTableViewCell: UITableViewCell {
 
     // MARK: - API
     /// Sets up the `ViewModel`.
-    func setUp(with viewModel: TopStoryViewModelProtocol) {
+    func setUp(with viewModel: StoryViewModelProtocol) {
         self.viewModel = viewModel
         viewModel.fetch()
     }

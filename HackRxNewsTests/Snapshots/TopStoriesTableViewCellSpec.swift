@@ -25,7 +25,7 @@ final class TopStoriesTableViewCellSpec: QuickSpec {
 
                     let networkManager = NetworkManager(service: service)
 
-                    let topStoryViewModel = TopStoryViewModel(storyID: 1006, networkManager: networkManager)
+                    let topStoryViewModel = StoryViewModel(storyID: 1006, networkManager: networkManager)
 
                     sut = TopStoriesTableViewCell()
 

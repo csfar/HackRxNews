@@ -13,7 +13,7 @@ import Nimble
 final class TopStoriesViewControllerSpec: QuickSpec {
     override func spec() {
         var sut: TopStoriesViewController!
-        var viewModel: TopStorieSViewModelMock!
+        var viewModel: TopStoriesViewModelMock!
         var service: NetworkServiceMock!
         var networkManager: NetworkManagerProtocol!
 
@@ -24,7 +24,7 @@ final class TopStoriesViewControllerSpec: QuickSpec {
             service.json = jsonURL
 
             networkManager = NetworkManager(service: service)
-            viewModel = TopStorieSViewModelMock()
+            viewModel = TopStoriesViewModelMock()
             sut = TopStoriesViewController(viewModel: viewModel)
         }
 
@@ -37,15 +37,15 @@ final class TopStoriesViewControllerSpec: QuickSpec {
 
         describe("when initialized") {
             it("should set up bindings") {
-                let viewModels = [TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                               TopStoryViewModel(storyID: 1006, networkManager: networkManager)]
+                let viewModels = [StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager),
+                               StoryViewModel(storyID: 1006, networkManager: networkManager)]
 
                 viewModel.relay.accept(viewModels)
 

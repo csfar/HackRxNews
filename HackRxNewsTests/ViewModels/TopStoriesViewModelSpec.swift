@@ -48,7 +48,7 @@ final class TopStoriesViewModelSpec: QuickSpec {
 
                 let data = try! Data(contentsOf: service.json!)
                 let ids = try! JSONDecoder().decode([ItemID].self, from: data)
-                let expectedViewModels = ids.map { TopStoryViewModel(storyID: $0, networkManager: networkManager) }
+                let expectedViewModels = ids.map { StoryViewModel(storyID: $0, networkManager: networkManager) }
 
                 let sutViewModels = try! sutObservable.toBlocking(timeout: 1.0).first()!
 

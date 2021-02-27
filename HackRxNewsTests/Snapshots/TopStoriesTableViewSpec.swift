@@ -28,17 +28,17 @@ final class TopStoriesTableViewSpec: QuickSpec {
 
                     let networkManager = NetworkManager(service: service)
 
-                    let viewModels = [TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager),
-                                   TopStoryViewModel(storyID: 1006, networkManager: networkManager)]
+                    let viewModels = [StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager),
+                                   StoryViewModel(storyID: 1006, networkManager: networkManager)]
 
-                    let relay = BehaviorRelay<[TopStoryViewModel]>(value: viewModels)
+                    let relay = BehaviorRelay<[StoryViewModel]>(value: viewModels)
 
                     disposeBag = DisposeBag()
                     

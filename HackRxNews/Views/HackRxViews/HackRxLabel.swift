@@ -68,6 +68,7 @@ final class HackRxLabel: UILabel {
     private func styleTitle() {
         font = UIFont.preferredFont(forTextStyle: .title2).bold()
         textColor = .black
+        numberOfLines = 0
     }
 
     /// Styles a `HackRxLabel` as `Style.author`.

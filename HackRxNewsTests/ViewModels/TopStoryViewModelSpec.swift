@@ -14,7 +14,7 @@ import RxSwift
 
 final class TopStoryViewModelSpec: QuickSpec {
     override func spec() {
-        var sut: TopStoryViewModel!
+        var sut: StoryViewModel!
         var service: NetworkServiceMock!
         var networkManager: NetworkManagerProtocol!
         var scheduler: ConcurrentDispatchQueueScheduler!
@@ -31,7 +31,7 @@ final class TopStoryViewModelSpec: QuickSpec {
 
                 scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
-                sut = TopStoryViewModel(storyID: 1006, networkManager: networkManager)
+                sut = StoryViewModel(storyID: 1006, networkManager: networkManager)
             }
 
             afterEach {

@@ -28,7 +28,7 @@ final class StoryDetailView: UIView {
 
     private var disposeBag: DisposeBag?
 
-    private var viewModel: TopStoryViewModel? {
+    private var viewModel: StoryViewModelProtocol? {
         didSet {
             guard let viewModel = viewModel else {
                 return
@@ -72,7 +72,7 @@ final class StoryDetailView: UIView {
 
     // MARK: - ViewModel
     /// Sets up the `ViewModel`.
-    func setUp(with viewModel: TopStoryViewModel) {
+    func setUp(with viewModel: StoryViewModelProtocol) {
         self.viewModel = viewModel
         viewModel.fetch()
     }
@@ -102,35 +102,29 @@ final class StoryDetailView: UIView {
     }
 
     private func layoutTitleLabelConstraints() {
-        let guides = self.layoutMarginsGuide
-
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: guides.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
+            titleLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 
     private func layoutAuthorLabelConstraints() {
-        let guides = self.layoutMarginsGuide
-
         NSLayoutConstraint.activate([
             authorLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,
                                              constant: StoryDetailScreenDesignSystem.View.defaultSpacing),
-            authorLabel.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
-            authorLabel.trailingAnchor.constraint(equalTo: guides.trailingAnchor)
+            authorLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            authorLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor)
         ])
     }
 
     private func layoutDetailsStackViewConstraints() {
-        let guides = self.layoutMarginsGuide
-
         NSLayoutConstraint.activate([
             detailsStackView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor,
                                            constant: StoryDetailScreenDesignSystem.View.defaultSpacing),
-            detailsStackView.leadingAnchor.constraint(equalTo: guides.leadingAnchor),
-            detailsStackView.trailingAnchor.constraint(equalTo: guides.trailingAnchor),
-            detailsStackView.bottomAnchor.constraint(equalTo: guides.bottomAnchor)
+            detailsStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            detailsStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            detailsStackView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
 }

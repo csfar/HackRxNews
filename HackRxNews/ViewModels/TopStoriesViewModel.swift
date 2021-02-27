@@ -10,7 +10,8 @@ import RxCocoa
 
 /// A representation of a `TopStoriesViewModel`.
 protocol TopStoriesViewModelProtocol {
-    var stories: Driver<[TopStoryViewModel]> { get }
+    var stories: Driver<[StoryViewModelProtocol]> { get }
+    func didSelect(story viewModel: StoryViewModelProtocol)
 }
 
 /// `ViewModel` for `Top Stories`.
@@ -20,7 +21,7 @@ final class TopStoriesViewModel: TopStoriesViewModelProtocol {
     private let networkManager: NetworkManagerProtocol
 
     /// The `TopStoryViewModel` relay. Used by a `Driver` to drive the UI.
-    private let viewModelsRelay: BehaviorRelay<[TopStoryViewModel]>
+    private let viewModelsRelay: BehaviorRelay<[StoryViewModelProtocol]>
 
     /// The Coordinator attatched to this ViewModel.
     private let coordinator: FeedCoordinator
@@ -46,7 +47,7 @@ final class TopStoriesViewModel: TopStoriesViewModelProtocol {
         let request = URLRequest(url: endpoint)
 
         self.networkManager.perform(request, for: [ItemID].self)
-            .map { $0.map { TopStoryViewModel(storyID: $0) } }
+            .map { $0.map { StoryViewModel(storyID: $0) } }
             .observe(on: MainScheduler.instance)
             .bind(to: viewModelsRelay)
             .disposed(by: disposeBag)
@@ -55,7 +56,12 @@ final class TopStoriesViewModel: TopStoriesViewModelProtocol {
 
     // MARK: - API
     /// The top stories.
-    var stories: Driver<[TopStoryViewModel]> {
+    var stories: Driver<[StoryViewModelProtocol]> {
         return viewModelsRelay.asDriver(onErrorJustReturn: [])
+    }
+
+    /// Triggers action when a story is selected.
+    func didSelect(story viewModel: StoryViewModelProtocol) {
+        coordinator.didSelect(story: viewModel)
     }
 }

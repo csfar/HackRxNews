@@ -17,7 +17,6 @@ final class TopStoryViewModelSpec: QuickSpec {
         var sut: StoryViewModel!
         var service: NetworkServiceMock!
         var networkManager: NetworkManagerProtocol!
-        var scheduler: ConcurrentDispatchQueueScheduler!
 
         describe("when initialized") {
 
@@ -29,28 +28,17 @@ final class TopStoryViewModelSpec: QuickSpec {
 
                 networkManager = NetworkManager(service: service)
 
-                scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
-
                 sut = StoryViewModel(storyID: 1006, networkManager: networkManager)
             }
 
             afterEach {
                 sut = nil
                 service = nil
-                scheduler = nil
             }
 
             context("and has fetched") {
 
                 it("should have drivers with fetched data") {
-
-                    let sutTitleObservable = sut.title.asObservable().subscribe(on: scheduler)
-                    let sutAuthorObservable = sut.author.asObservable().subscribe(on: scheduler)
-                    let sutDateOfPostingObservable = sut.dateOfPosting.asObservable().subscribe(on: scheduler)
-                    let sutNumberOfCommentsObservable = sut.numberOfComments.asObservable().subscribe(on: scheduler)
-                    let sutPointsObservable = sut.points.asObservable().subscribe(on: scheduler)
-
-
                     let data = try! Data(contentsOf: service.json!)
                     let item = try! JSONDecoder().decode(Item.self, from: data)
                     let (title,
@@ -61,11 +49,12 @@ final class TopStoryViewModelSpec: QuickSpec {
 
                     sut.fetch()
 
-                    let sutTitle = try! sutTitleObservable.toBlocking(timeout: 1.0).first()!
-                    let sutAuthor = try! sutAuthorObservable.toBlocking(timeout: 1.0).first()!
-                    let sutDateOfPosting = try! sutDateOfPostingObservable.toBlocking(timeout: 1.0).first()!
-                    let sutNumberOfComments = try! sutNumberOfCommentsObservable.toBlocking(timeout: 1.0).first()!
-                    let sutPoints = try! sutPointsObservable.toBlocking(timeout: 1.0).first()!
+
+                    let sutTitle = try! sut.title.toBlocking(timeout: 1.0).first()!
+                    let sutAuthor = try! sut.author.toBlocking(timeout: 1.0).first()!
+                    let sutDateOfPosting = try! sut.dateOfPosting.toBlocking(timeout: 1.0).first()!
+                    let sutNumberOfComments = try! sut.numberOfComments.toBlocking(timeout: 1.0).first()!
+                    let sutPoints = try! sut.points.toBlocking(timeout: 1.0).first()!
 
                     expect(sutTitle).to(equal(title))
                     expect(sutAuthor).to(equal(author))
@@ -78,18 +67,11 @@ final class TopStoryViewModelSpec: QuickSpec {
             context("and has not fetched") {
 
                 it("should have drivers with default values") {
-
-                    let sutTitleObservable = sut.title.asObservable().subscribe(on: scheduler)
-                    let sutAuthorObservable = sut.author.asObservable().subscribe(on: scheduler)
-                    let sutDateOfPostingObservable = sut.dateOfPosting.asObservable().subscribe(on: scheduler)
-                    let sutNumberOfCommentsObservable = sut.numberOfComments.asObservable().subscribe(on: scheduler)
-                    let sutPointsObservable = sut.points.asObservable().subscribe(on: scheduler)
-
-                    let sutTitle = try! sutTitleObservable.toBlocking(timeout: 1.0).first()!
-                    let sutAuthor = try! sutAuthorObservable.toBlocking(timeout: 1.0).first()!
-                    let sutDateOfPosting = try! sutDateOfPostingObservable.toBlocking(timeout: 1.0).first()!
-                    let sutNumberOfComments = try! sutNumberOfCommentsObservable.toBlocking(timeout: 1.0).first()!
-                    let sutPoints = try! sutPointsObservable.toBlocking(timeout: 1.0).first()!
+                    let sutTitle = try! sut.title.toBlocking(timeout: 1.0).first()!
+                    let sutAuthor = try! sut.author.toBlocking(timeout: 1.0).first()!
+                    let sutDateOfPosting = try! sut.dateOfPosting.toBlocking(timeout: 1.0).first()!
+                    let sutNumberOfComments = try! sut.numberOfComments.toBlocking(timeout: 1.0).first()!
+                    let sutPoints = try! sut.points.toBlocking(timeout: 1.0).first()!
 
                     expect(sutTitle).to(equal("-"))
                     expect(sutAuthor).to(equal("by "))

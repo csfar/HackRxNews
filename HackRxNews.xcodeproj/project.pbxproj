@@ -28,7 +28,7 @@
 		A43BFF45257FE07500612BE1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF44257FE07500612BE1 /* Coordinator.swift */; };
 		A43BFF4B257FE10900612BE1 /* FeedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */; };
 		A43D767025E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D766F25E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift */; };
-		A43D767425E2EBB1001A0708 /* TopStoryViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */; };
+		A43D767425E2EBB1001A0708 /* StoryViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D767325E2EBB1001A0708 /* StoryViewModelSpec.swift */; };
 		A43D767825EAD529001A0708 /* StoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43D767725EAD529001A0708 /* StoryDetailViewController.swift */; };
 		A43F28EE25D9C13400BD40DB /* StoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28ED25D9C13400BD40DB /* StoryDetailView.swift */; };
 		A43F28F225D9C3B500BD40DB /* HackRxStackViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43F28F125D9C3B500BD40DB /* HackRxStackViewWrapper.swift */; };
@@ -38,6 +38,8 @@
 		A4635A65257A743500A85EAD /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A64257A743500A85EAD /* NetworkService.swift */; };
 		A4635A69257A749500A85EAD /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A68257A749500A85EAD /* NetworkServiceError.swift */; };
 		A4635A6D257A756200A85EAD /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4635A6C257A756200A85EAD /* URLSession+Extensions.swift */; };
+		A474911425F41D870031F284 /* StoryDetailViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A474911325F41D870031F284 /* StoryDetailViewControllerSpec.swift */; };
+		A474911A25F41E570031F284 /* StoryViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A474911925F41E570031F284 /* StoryViewModelMock.swift */; };
 		A47FD2092586A1A000479BC5 /* TopStoriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */; };
 		A48DEE74257292BB00899BB4 /* AutoLayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */; };
 		A4ABDE392571B40900197D10 /* TopStoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4ABDE382571B40900197D10 /* TopStoriesTableViewCell.swift */; };
@@ -92,7 +94,7 @@
 		A43BFF44257FE07500612BE1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		A43BFF4A257FE10900612BE1 /* FeedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCoordinator.swift; sourceTree = "<group>"; };
 		A43D766F25E1C1E5001A0708 /* StoryDetailScreenDesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailScreenDesignSystem.swift; sourceTree = "<group>"; };
-		A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoryViewModelSpec.swift; sourceTree = "<group>"; };
+		A43D767325E2EBB1001A0708 /* StoryViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModelSpec.swift; sourceTree = "<group>"; };
 		A43D767725EAD529001A0708 /* StoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewController.swift; sourceTree = "<group>"; };
 		A43F28ED25D9C13400BD40DB /* StoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailView.swift; sourceTree = "<group>"; };
 		A43F28F125D9C3B500BD40DB /* HackRxStackViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackRxStackViewWrapper.swift; sourceTree = "<group>"; };
@@ -102,6 +104,8 @@
 		A4635A64257A743500A85EAD /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A4635A68257A749500A85EAD /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		A4635A6C257A756200A85EAD /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
+		A474911325F41D870031F284 /* StoryDetailViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryDetailViewControllerSpec.swift; sourceTree = "<group>"; };
+		A474911925F41E570031F284 /* StoryViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModelMock.swift; sourceTree = "<group>"; };
 		A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesViewModelSpec.swift; sourceTree = "<group>"; };
 		A48DEE73257292BB00899BB4 /* AutoLayoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutTests.swift; sourceTree = "<group>"; };
 		A4ABDE382571B40900197D10 /* TopStoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStoriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				A40B083525CF30C1001E286C /* TopStoriesViewControllerSpec.swift */,
+				A474911325F41D870031F284 /* StoryDetailViewControllerSpec.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				A40B083F25CF3307001E286C /* TopStoriesViewModelMock.swift */,
+				A474911925F41E570031F284 /* StoryViewModelMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -281,7 +287,7 @@
 			children = (
 				A40B083E25CF32FB001E286C /* Mocks */,
 				A47FD2082586A1A000479BC5 /* TopStoriesViewModelSpec.swift */,
-				A43D767325E2EBB1001A0708 /* TopStoryViewModelSpec.swift */,
+				A43D767325E2EBB1001A0708 /* StoryViewModelSpec.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -681,12 +687,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A474911A25F41E570031F284 /* StoryViewModelMock.swift in Sources */,
 				A40B084025CF3307001E286C /* TopStoriesViewModelMock.swift in Sources */,
 				A437BFB02580F94A00C61E07 /* TopStoriesTableViewCellSpec.swift in Sources */,
 				A433D40125D9CAF7006B3743 /* StoryDetailViewSpec.swift in Sources */,
 				A40B083125C73911001E286C /* TopStoriesTableViewSpec.swift in Sources */,
+				A474911425F41D870031F284 /* StoryDetailViewControllerSpec.swift in Sources */,
 				A47FD2092586A1A000479BC5 /* TopStoriesViewModelSpec.swift in Sources */,
-				A43D767425E2EBB1001A0708 /* TopStoryViewModelSpec.swift in Sources */,
+				A43D767425E2EBB1001A0708 /* StoryViewModelSpec.swift in Sources */,
 				A4E98316257D1E4B002BDFA6 /* NetworkManagerSpec.swift in Sources */,
 				A40B083625CF30C1001E286C /* TopStoriesViewControllerSpec.swift in Sources */,
 				A4E9831C257D1EED002BDFA6 /* NetworkServiceDataTaskMock.swift in Sources */,

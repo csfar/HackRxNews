@@ -1,5 +1,5 @@
 //
-//  TopStoryViewModelSpec.swift
+//  StoryViewModelSpec.swift
 //  HackRxNewsTests
 //
 //  Created by Artur Carneiro on 21/02/21.
@@ -12,7 +12,7 @@ import RxBlocking
 import RxSwift
 @testable import HackRxNews
 
-final class TopStoryViewModelSpec: QuickSpec {
+final class StoryViewModelSpec: QuickSpec {
     override func spec() {
         var sut: StoryViewModel!
         var service: NetworkServiceMock!
